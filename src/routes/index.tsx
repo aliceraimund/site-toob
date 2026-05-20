@@ -36,6 +36,12 @@ function HomePage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 160 }}>
+          <img
+            src="/logos/Logo Toob para Fundo Preto.png"
+            alt="Toob"
+            style={{ height: "clamp(56px, 8vw, 100px)", width: "auto", marginBottom: 32 }}
+          />
+
           <div className="eyebrow" style={{ color: "#C0392B" }}>
             Locação de caminhões e equipamentos roll-on
           </div>

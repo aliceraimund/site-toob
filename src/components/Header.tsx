@@ -11,17 +11,28 @@ const services = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#0D0D0D] text-white">
-      <div className="container-x flex items-center justify-between" style={{ height: 72 }}>
+    <header
+      className="fixed inset-x-0 top-0 z-50 bg-[#0D0D0D] text-white"
+      style={{ transition: "all 0.35s ease" }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => { setHovered(false); setOpen(false); }}
+    >
+      <div
+        className="container-x flex items-center justify-between"
+        style={{ height: hovered ? 96 : 72, transition: "height 0.35s ease" }}
+      >
         <Link to="/" className="flex items-center" aria-label="Toob — Início" onClick={() => setMobile(false)}>
           <img
             src="/logos/Logo Toob para Fundo Preto.png"
             alt="Toob"
-            width={144}
-            height={36}
-            style={{ height: 36, width: "auto" }}
+            style={{
+              height: hovered ? 52 : 40,
+              width: "auto",
+              transition: "height 0.35s ease",
+            }}
           />
         </Link>
 
@@ -31,6 +42,7 @@ export function Header() {
             className="relative"
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
+            onClick={() => setOpen((v) => !v)}
           >
             <button className="group inline-flex items-center gap-1 font-sans-body font-medium text-white">
               <span className="relative">
