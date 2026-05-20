@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Reveal, RevealStagger, RevealItem, TextReveal } from "../components/Reveal";
 import { TiltCard } from "../components/TiltCard";
 import { MagneticButton } from "../components/MagneticButton";
 import { InfinityDivider } from "../components/InfinityDivider";
