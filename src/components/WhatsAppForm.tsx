@@ -26,65 +26,51 @@ export function WhatsAppForm({
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(buildMessage(values))}`, "_blank");
+    window.open(
+      `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(buildMessage(values))}`,
+      "_blank"
+    );
   };
 
-  const bg    = dark ? "#161616" : "#fff";
-  const text  = dark ? "#fff" : "#0D0D0D";
-  const sub   = dark ? "rgba(255,255,255,0.45)" : "#5D5D5D";
-  const border = dark ? "rgba(255,255,255,0.12)" : "#e5e5e5";
-  const inputBg = dark ? "#1e1e1e" : "#fafafa";
-  const focusBg = dark ? "#222" : "#fff";
+  const sectionBg  = dark ? "#0D0D0D" : "#F5F5F5";
+  const cardBg     = dark ? "#161616" : "#FFFFFF";
+  const cardBorder = dark ? "rgba(255,255,255,0.08)" : "#E5E5E5";
+  const textMain   = dark ? "#FFFFFF" : "#0D0D0D";
+  const textSub    = dark ? "rgba(255,255,255,0.45)" : "#5D5D5D";
+  const inputBg    = dark ? "#1e1e1e" : "#fafafa";
+  const inputBorder = dark ? "rgba(255,255,255,0.12)" : "#e5e5e5";
 
   return (
-    <section
-      id={id}
-      style={{ background: dark ? "#0D0D0D" : "#F5F5F5" }}
-      className="py-24"
-    >
+    <section id={id} style={{ background: sectionBg, padding: "96px 0" }}>
       <div className="container-x">
-        <div className="mx-auto max-w-2xl">
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <div
             style={{
-              background: bg,
-              borderRadius: 20,
-              padding: "clamp(32px, 5vw, 56px)",
-              border: `1px solid ${border}`,
-              boxShadow: dark ? "none" : "0 4px 32px rgba(0,0,0,0.08)",
+              background: cardBg,
+              border: `1px solid ${cardBorder}`,
+              borderRadius: 16,
+              padding: "clamp(28px, 5vw, 52px)",
             }}
           >
-            <div className="eyebrow" style={{ color: "#C0392B" }}>
-              Atendimento direto
-            </div>
+            <div className="eyebrow">Atendimento direto</div>
             <h2
-              className="font-display mt-3"
-              style={{ fontSize: "clamp(36px,5vw,52px)", color: text }}
+              className="font-display"
+              style={{ fontSize: "clamp(32px, 5vw, 48px)", color: textMain, marginTop: 12 }}
             >
               {title}
             </h2>
 
-            <form onSubmit={submit} className="mt-10 grid gap-5 md:grid-cols-2">
+            <form onSubmit={submit} style={{ marginTop: 32, display: "grid", gap: 20, gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
               {fields.map((f) => (
-                <label key={f.name} className="flex flex-col gap-1.5">
-                  <span className="input-label" style={{ color: sub }}>
-                    {f.label}
-                  </span>
+                <label key={f.name} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <span className="field-label" style={{ color: textSub }}>{f.label}</span>
                   {f.type === "select" ? (
                     <select
                       required
                       value={values[f.name] ?? ""}
                       onChange={(e) => setValues((v) => ({ ...v, [f.name]: e.target.value }))}
-                      style={{
-                        background: inputBg, color: text,
-                        border: `2px solid ${border}`,
-                        borderRadius: 10, padding: "14px 18px",
-                        fontFamily: "Barlow, sans-serif", fontSize: 15,
-                        outline: "none", width: "100%",
-                        transition: "border-color .2s",
-                        appearance: "auto",
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = "#C0392B"; e.target.style.background = focusBg; }}
-                      onBlur={(e) => { e.target.style.borderColor = border; e.target.style.background = inputBg; }}
+                      className="field-input"
+                      style={{ background: inputBg, color: textMain, borderColor: inputBorder }}
                     >
                       <option value="">Selecione…</option>
                       {f.options.map((o) => (
@@ -98,24 +84,16 @@ export function WhatsAppForm({
                       placeholder={f.type === "date" ? "" : f.label}
                       value={values[f.name] ?? ""}
                       onChange={(e) => setValues((v) => ({ ...v, [f.name]: e.target.value }))}
-                      style={{
-                        background: inputBg, color: text,
-                        border: `2px solid ${border}`,
-                        borderRadius: 10, padding: "14px 18px",
-                        fontFamily: "Barlow, sans-serif", fontSize: 15,
-                        outline: "none", width: "100%",
-                        transition: "border-color .2s",
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = "#C0392B"; e.target.style.background = focusBg; }}
-                      onBlur={(e) => { e.target.style.borderColor = border; e.target.style.background = inputBg; }}
+                      className="field-input"
+                      style={{ background: inputBg, color: textMain, borderColor: inputBorder }}
                     />
                   )}
                 </label>
               ))}
 
-              <div className="md:col-span-2 mt-2">
-                <button type="submit" className="btn-whatsapp w-full">
-                  <MessageCircle size={20} />
+              <div style={{ gridColumn: "1 / -1", marginTop: 8 }}>
+                <button type="submit" className="btn-whatsapp">
+                  <MessageCircle size={19} />
                   Enviar pelo WhatsApp
                 </button>
               </div>

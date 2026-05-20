@@ -1,8 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import { HeroReveal, Reveal, RevealStagger, RevealItem } from "../components/Reveal";
-import { TiltCard } from "../components/TiltCard";
-import { MagneticButton } from "../components/MagneticButton";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/sobre")({
@@ -10,203 +7,284 @@ export const Route = createFileRoute("/sobre")({
   component: SobrePage,
 });
 
-const valores = [
-  { icon: "⚡", title: "Flexibilidade real", body: "Diário, semanal, mensal. O prazo é seu. Sem mínimo imposto, sem multa por curto prazo. Sua operação manda." },
-  { icon: "🎯", title: "Agilidade no processo", body: "Da solicitação à proposta em horas. Você fala com quem decide, sem intermediários, sem fila de atendimento." },
-  { icon: "✅", title: "Compromisso com o resultado", body: "Equipamento disponível, entrega no prazo combinado. Sem promessa vazia." },
-];
-
-const stats = [
-  { value: "99,7%", label: "redução em emissões de CO₂" },
-  { value: "100%", label: "dos veículos rastreados" },
-  { value: "Mensal", label: "inventário de emissões" },
-];
-
 function SobrePage() {
   return (
     <>
+      {/* ── HERO ── */}
       <section
-        className="relative flex min-h-[65vh] items-end overflow-hidden text-white"
         style={{
+          minHeight: "60vh",
+          display: "flex",
+          alignItems: "flex-end",
           backgroundImage: [
-            "linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.45) 40%, rgba(13,13,13,0.95) 100%)",
+            "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
             "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&auto=format')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",
+          color: "#fff",
         }}
       >
-        <div className="container-x relative z-10 w-full pb-20 pt-36">
-          <HeroReveal>
-            <div className="eyebrow" style={{ color: "#C0392B" }}>Sobre Nós</div>
-          </HeroReveal>
-          <HeroReveal delay={0.1}>
-            <h1 className="font-display mt-5 max-w-4xl text-white" style={{ fontSize: "clamp(48px,6.5vw,80px)", lineHeight: 1.05 }}>
-              Toob: agilidade e flexibilidade que o mercado tradicional não entrega.
-            </h1>
-          </HeroReveal>
-          <HeroReveal delay={0.22}>
-            <p className="font-sans-body mt-6 max-w-2xl" style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.65 }}>
-              Nascemos para resolver o que o mercado ignorava: a necessidade de locação rápida,
-              sem burocracia e sem contrato longo.
-            </p>
-          </HeroReveal>
+        <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
+          <div className="eyebrow" style={{ color: "#C0392B" }}>Sobre Nós</div>
+          <h1
+            className="font-display"
+            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
+          >
+            Agilidade e flexibilidade que o mercado tradicional não entrega.
+          </h1>
+          <p
+            style={{
+              marginTop: 20,
+              fontSize: 17,
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.72)",
+              maxWidth: 520,
+              fontFamily: "Barlow, sans-serif",
+            }}
+          >
+            Nascemos para resolver o que o mercado ignorava: a necessidade de locação rápida,
+            sem burocracia e sem contrato longo.
+          </p>
         </div>
       </section>
 
-      {/* Quem somos */}
-      <section className="py-28" style={{ background: "#fff" }}>
+      {/* ── QUEM SOMOS ── */}
+      <section style={{ background: "#fff", padding: "96px 0" }}>
         <div className="container-x">
-          <div className="grid items-center gap-16 md:grid-cols-2">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 64,
+              alignItems: "center",
+            }}
+          >
             <div>
-              <Reveal>
-                <div className="eyebrow" style={{ color: "#C0392B" }}>Quem somos</div>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <h2 className="font-display mt-3" style={{ fontSize: "clamp(40px,5vw,58px)", color: "#0D0D0D" }}>
-                  Um modelo diferente do mercado tradicional.
-                </h2>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <p className="font-sans-body mt-6" style={{ fontSize: 16, lineHeight: 1.8, color: "#5D5D5D" }}>
-                  A Toob é uma empresa especializada em locação de caminhões roll-on, caçambas e equipamentos para
-                  operações industriais, logísticas e de gestão de resíduos. Atuamos com um modelo diferente do
-                  mercado tradicional: prazos flexíveis, processo simples e atendimento direto.
-                </p>
-              </Reveal>
-              <Reveal delay={0.3}>
-                <p className="font-sans-body mt-5" style={{ fontSize: 16, lineHeight: 1.8, color: "#5D5D5D" }}>
-                  Enquanto o mercado exige contratos longos e burocracia, a Toob resolve em horas. Nossos clientes
-                  são indústrias, construtoras, empresas de reciclagem, operadores logísticos — qualquer operação que
-                  precise de equipamento agora, sem abrir mão da qualidade e da confiabilidade.
-                </p>
-              </Reveal>
-            </div>
-            <Reveal delay={0.2}>
-              <div
+              <div className="eyebrow">Quem somos</div>
+              <h2
+                className="font-display"
+                style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
+              >
+                Um modelo diferente do mercado tradicional.
+              </h2>
+              <p
                 style={{
-                  background: "#0D0D0D",
-                  borderRadius: 24,
-                  padding: 48,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  aspectRatio: "1",
+                  marginTop: 20,
+                  fontSize: 16,
+                  lineHeight: 1.8,
+                  color: "#5D5D5D",
+                  fontFamily: "Barlow, sans-serif",
                 }}
               >
-                <img
-                  src="/logos/Símbolo Toob.png"
-                  alt="Símbolo Toob"
-                  style={{ width: "60%", height: "auto", animation: "spin-y 10s ease-in-out infinite alternate" }}
-                />
-              </div>
-            </Reveal>
+                A Toob é uma empresa especializada em locação de caminhões roll-on, caçambas e
+                equipamentos para operações industriais, logísticas e de gestão de resíduos.
+              </p>
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: 16,
+                  lineHeight: 1.8,
+                  color: "#5D5D5D",
+                  fontFamily: "Barlow, sans-serif",
+                }}
+              >
+                Enquanto o mercado exige contratos longos e burocracia, a Toob resolve em horas.
+                Nossos clientes são indústrias, construtoras, empresas de reciclagem, operadores
+                logísticos — qualquer operação que precise de equipamento agora, sem abrir mão
+                da qualidade e da confiabilidade.
+              </p>
+            </div>
+
+            <div
+              style={{
+                background: "#0D0D0D",
+                borderRadius: 16,
+                padding: 48,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                aspectRatio: "1",
+              }}
+            >
+              <img
+                src="/logos/Símbolo Toob.png"
+                alt="Símbolo Toob"
+                style={{ width: "60%", height: "auto" }}
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Como trabalhamos */}
-      <section className="py-28" style={{ background: "#0D0D0D" }}>
+      {/* ── VALORES ── */}
+      <section style={{ background: "#0D0D0D", padding: "96px 0" }}>
         <div className="container-x">
-          <Reveal><div className="eyebrow" style={{ color: "#C0392B" }}>Como trabalhamos</div></Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display mt-3 text-white" style={{ fontSize: "clamp(40px,5.5vw,60px)" }}>
-              Três princípios que guiam tudo.
-            </h2>
-          </Reveal>
-          <RevealStagger className="mt-14 grid gap-7 md:grid-cols-3">
-            {valores.map((v) => (
-              <RevealItem key={v.title}>
-                <TiltCard className="card-dark h-full p-8 text-white">
-                  <div style={{ fontSize: 40, marginBottom: 20 }}>{v.icon}</div>
-                  <h3 className="font-display" style={{ fontSize: 30 }}>{v.title}</h3>
-                  <p className="font-sans-body mt-4" style={{ fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.6)" }}>
-                    {v.body}
-                  </p>
-                </TiltCard>
-              </RevealItem>
+          <div className="eyebrow">Como trabalhamos</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#fff" }}
+          >
+            Três princípios que guiam tudo.
+          </h2>
+
+          <div
+            style={{
+              marginTop: 48,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 24,
+            }}
+          >
+            {[
+              {
+                title: "Flexibilidade real",
+                body: "Diário, semanal, mensal. O prazo é seu. Sem mínimo imposto, sem multa por curto prazo. Sua operação manda.",
+              },
+              {
+                title: "Agilidade no processo",
+                body: "Da solicitação à proposta em horas. Você fala com quem decide, sem intermediários, sem fila de atendimento.",
+              },
+              {
+                title: "Compromisso com o resultado",
+                body: "Equipamento disponível, entrega no prazo combinado. Sem promessa vazia.",
+              },
+            ].map((v) => (
+              <div key={v.title} className="card-dark" style={{ padding: 32 }}>
+                <div
+                  style={{
+                    width: 32,
+                    height: 3,
+                    background: "#C0392B",
+                    borderRadius: 2,
+                    marginBottom: 20,
+                  }}
+                />
+                <h3 className="font-display" style={{ fontSize: 28, color: "#fff" }}>
+                  {v.title}
+                </h3>
+                <p
+                  style={{
+                    marginTop: 12,
+                    fontSize: 15,
+                    lineHeight: 1.75,
+                    color: "rgba(255,255,255,0.6)",
+                    fontFamily: "Barlow, sans-serif",
+                  }}
+                >
+                  {v.body}
+                </p>
+              </div>
             ))}
-          </RevealStagger>
+          </div>
         </div>
       </section>
 
-      {/* Sustentabilidade */}
-      <section className="py-28" style={{ background: "#F5F5F5" }}>
+      {/* ── SUSTENTABILIDADE ── */}
+      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
         <div className="container-x">
-          <Reveal><div className="eyebrow" style={{ color: "#C0392B" }}>Compromisso Ambiental</div></Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display mt-3" style={{ fontSize: "clamp(40px,5.5vw,60px)", color: "#0D0D0D", maxWidth: 700 }}>
-              Sua operação mais eficiente. E mais verde.
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid items-start gap-16 md:grid-cols-2">
-            <Reveal delay={0.1}>
-              <p className="font-sans-body" style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D" }}>
-                A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos. São a mesma
-                decisão. Por isso, nossa frota inclui caminhões a gás com redução comprovada de 15% a 99,7% nas
-                emissões de CO₂, com base na metodologia GHG Protocol.
+          <div className="eyebrow">Compromisso Ambiental</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D", maxWidth: 640 }}
+          >
+            Sua operação mais eficiente. E mais verde.
+          </h2>
+
+          <div
+            style={{
+              marginTop: 40,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 48,
+              alignItems: "start",
+            }}
+          >
+            <div>
+              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+                A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos — são a mesma decisão.
+                Nossa frota inclui caminhões a gás com redução comprovada de 15% a 99,7% nas emissões de CO₂,
+                com base na metodologia GHG Protocol.
               </p>
-              <p className="font-sans-body mt-5" style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D" }}>
-                Cada veículo é 100% rastreado por telemetria e emite inventário de emissões mensalmente — dados que
-                seus relatórios de sustentabilidade e exigências ESG podem usar diretamente. Quando você escolhe a
-                frota a gás da Toob, não está só locando um caminhão. Está tornando sua operação parte da solução.
+              <p style={{ marginTop: 16, fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+                Cada veículo é 100% rastreado por telemetria e emite inventário de emissões mensalmente —
+                dados que seus relatórios de sustentabilidade e exigências ESG podem usar diretamente.
               </p>
-            </Reveal>
-            <RevealStagger className="flex flex-col gap-5">
-              {stats.map((s) => (
-                <RevealItem key={s.label}>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {[
+                { value: "99,7%", label: "redução em emissões de CO₂" },
+                { value: "100%", label: "dos veículos rastreados" },
+                { value: "Mensal", label: "inventário de emissões" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid #E5E5E5",
+                    borderLeft: "4px solid #C0392B",
+                    borderRadius: 8,
+                    padding: "24px 28px",
+                  }}
+                >
+                  <div className="font-display" style={{ fontSize: 44, color: "#C0392B", lineHeight: 1 }}>
+                    {s.value}
+                  </div>
                   <div
                     style={{
-                      background: "#fff",
-                      borderRadius: 16,
-                      padding: "28px 32px",
-                      border: "1px solid #eee",
-                      borderLeft: "4px solid #C0392B",
-                      boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+                      marginTop: 6,
+                      fontSize: 13,
+                      color: "#5D5D5D",
+                      fontFamily: "Barlow, sans-serif",
+                      fontWeight: 500,
                     }}
                   >
-                    <div className="font-display" style={{ fontSize: 48, color: "#C0392B", lineHeight: 1 }}>{s.value}</div>
-                    <div className="font-sans-body mt-2" style={{ fontSize: 14, color: "#5D5D5D", fontWeight: 500 }}>{s.label}</div>
+                    {s.label}
                   </div>
-                </RevealItem>
+                </div>
               ))}
-            </RevealStagger>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-28" style={{ background: "#C0392B" }}>
-        <div className="container-x text-center">
-          <Reveal>
-            <h2 className="font-display text-white" style={{ fontSize: "clamp(40px,6vw,64px)" }}>
-              Quer saber mais sobre como a Toob pode ajudar sua operação?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="mt-10 flex justify-center">
-              <MagneticButton
-                as="a"
-                href={`https://wa.me/${WHATS_NUMBER}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-3"
-                style={{
-                  background: "#fff",
-                  color: "#0D0D0D",
-                  borderRadius: 12,
-                  padding: "18px 40px",
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 18,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                }}
-              >
-                Falar pelo WhatsApp <ArrowRight size={20} />
-              </MagneticButton>
-            </div>
-          </Reveal>
+      {/* ── CTA ── */}
+      <section style={{ background: "#C0392B", padding: "96px 0" }}>
+        <div className="container-x" style={{ textAlign: "center" }}>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 6vw, 60px)", color: "#fff", maxWidth: 700, margin: "0 auto" }}
+          >
+            Quer saber mais sobre como a Toob pode ajudar sua operação?
+          </h2>
+          <div style={{ marginTop: 36, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+            <a
+              href={`https://wa.me/${WHATS_NUMBER}`}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                background: "#fff",
+                color: "#0D0D0D",
+                fontFamily: "Bebas Neue, sans-serif",
+                fontSize: 17,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                padding: "16px 36px",
+                borderRadius: 8,
+                textDecoration: "none",
+              }}
+            >
+              <MessageCircle size={19} />
+              Falar pelo WhatsApp
+            </a>
+            <Link to="/contato" className="btn-ghost">
+              Solicitar Orçamento <ArrowRight size={17} />
+            </Link>
+          </div>
         </div>
       </section>
     </>

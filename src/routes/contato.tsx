@@ -1,132 +1,183 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
-import { HeroReveal, Reveal, RevealStagger, RevealItem } from "../components/Reveal";
-import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { createFileRoute } from "@tanstack/react-router";
+import { Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { WhatsAppForm, WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({ meta: [{ title: "Contato — Toob" }] }),
   component: ContatoPage,
 });
 
-const links = [
-  { label: "Locação de Caminhões", to: "/caminhoes" },
-  { label: "Locação de Equipamentos", to: "/equipamentos" },
-  { label: "Compra e Venda", to: "/compra-venda" },
-];
-
 function ContatoPage() {
   return (
     <>
+      {/* ── HERO ── */}
       <section
-        className="relative flex min-h-[50vh] items-end overflow-hidden text-white"
         style={{
-          background: "linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)",
+          background: "#0D0D0D",
+          padding: "120px 0 80px",
+          color: "#fff",
         }}
       >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 50% 60% at 20% 50%, rgba(192,57,43,0.2), transparent 70%)" }}
-        />
-        <div className="container-x relative z-10 w-full pb-20 pt-36">
-          <HeroReveal>
-            <div className="eyebrow" style={{ color: "#C0392B" }}>Contato</div>
-          </HeroReveal>
-          <HeroReveal delay={0.1}>
-            <h1 className="font-display mt-4 text-white" style={{ fontSize: "clamp(52px,7vw,88px)" }}>
-              Fale com a Toob.
-            </h1>
-          </HeroReveal>
-          <HeroReveal delay={0.22}>
-            <p className="font-sans-body mt-5 max-w-xl" style={{ fontSize: 17, color: "rgba(255,255,255,0.7)", lineHeight: 1.65 }}>
-              Sem formulário longo, sem fila de atendimento. Manda uma mensagem pelo WhatsApp e nossa equipe responde com agilidade.
-            </p>
-          </HeroReveal>
+        <div className="container-x">
+          <div className="eyebrow" style={{ color: "#C0392B" }}>Fale com a Toob</div>
+          <h1
+            className="font-display"
+            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
+          >
+            Proposta em horas. Atendimento direto.
+          </h1>
+          <p
+            style={{
+              marginTop: 20,
+              fontSize: 17,
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.65)",
+              maxWidth: 500,
+              fontFamily: "Barlow, sans-serif",
+            }}
+          >
+            Você fala diretamente com quem decide. Sem intermediários, sem formulário perdido,
+            sem espera sem resposta.
+          </p>
         </div>
       </section>
 
-      <section className="py-28" style={{ background: "#F5F5F5" }}>
+      {/* ── WHATSAPP CTA + INFO ── */}
+      <section style={{ background: "#F5F5F5", padding: "80px 0" }}>
         <div className="container-x">
-          <div className="mx-auto max-w-3xl">
-            {/* WhatsApp CTA principal */}
-            <Reveal>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 24,
+            }}
+          >
+            {/* WhatsApp card */}
+            <div
+              style={{
+                background: "#0D0D0D",
+                borderRadius: 12,
+                padding: 36,
+                gridColumn: "span 1",
+              }}
+            >
               <div
                 style={{
-                  background: "#0D0D0D",
-                  borderRadius: 20,
-                  padding: "48px 40px",
-                  textAlign: "center",
-                  marginBottom: 48,
+                  width: 48,
+                  height: 48,
+                  background: "#25D366",
+                  borderRadius: 12,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 20,
                 }}
               >
-                <div
-                  style={{ width: 72, height: 72, borderRadius: 18, background: "rgba(37,211,102,0.15)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}
-                >
-                  <MessageCircle size={32} color="#25D366" />
-                </div>
-                <h2 className="font-display text-white" style={{ fontSize: "clamp(32px,4vw,48px)" }}>
-                  A forma mais rápida de falar com a Toob.
-                </h2>
-                <p className="font-sans-body mt-4" style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>
-                  Nossa equipe responde em horas, não dias. Direto no WhatsApp, sem intermediários.
-                </p>
-                <a
-                  href={`https://wa.me/${WHATS_NUMBER}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-whatsapp mt-8 inline-flex"
-                >
-                  Abrir WhatsApp <ArrowRight size={18} />
-                </a>
+                <MessageCircle size={24} color="#fff" />
               </div>
-            </Reveal>
+              <h3 className="font-display" style={{ fontSize: 30, color: "#fff" }}>
+                WhatsApp
+              </h3>
+              <p
+                style={{
+                  marginTop: 10,
+                  fontSize: 15,
+                  lineHeight: 1.65,
+                  color: "rgba(255,255,255,0.6)",
+                  fontFamily: "Barlow, sans-serif",
+                }}
+              >
+                A forma mais rápida de falar com a gente. Atendemos em tempo real durante o horário comercial.
+              </p>
+              <a
+                href={`https://wa.me/${WHATS_NUMBER}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  marginTop: 24,
+                  background: "#25D366",
+                  color: "#fff",
+                  fontFamily: "Bebas Neue, sans-serif",
+                  fontSize: 15,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  padding: "12px 24px",
+                  borderRadius: 8,
+                  textDecoration: "none",
+                }}
+              >
+                <MessageCircle size={16} /> Enviar mensagem
+              </a>
+            </div>
 
             {/* Info cards */}
-            <RevealStagger className="grid gap-5 sm:grid-cols-3 mb-14">
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
-                { icon: <Mail size={22} color="#C0392B" />, label: "E-mail", value: "contato@toob.com.br" },
-                { icon: <MapPin size={22} color="#C0392B" />, label: "Localização", value: "São Paulo, SP" },
-                { icon: <Clock size={22} color="#C0392B" />, label: "Horário", value: "Seg–Sex, 8h às 18h" },
-              ].map((item) => (
-                <RevealItem key={item.label}>
-                  <div
-                    style={{
-                      background: "#fff",
-                      borderRadius: 16,
-                      padding: "28px 24px",
-                      border: "1px solid #eee",
-                      textAlign: "center",
-                      boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-                    }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "center", marginBottom: 14 }}>{item.icon}</div>
-                    <div className="eyebrow" style={{ color: "#5D5D5D", marginBottom: 6 }}>{item.label}</div>
-                    <div className="font-sans-body" style={{ fontSize: 15, fontWeight: 600, color: "#0D0D0D" }}>{item.value}</div>
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-
-            {/* Links rápidos */}
-            <Reveal>
-              <div style={{ borderTop: "1px solid #e5e5e5", paddingTop: 32 }}>
-                <div className="eyebrow text-center" style={{ color: "#5D5D5D", marginBottom: 20 }}>Links rápidos</div>
-                <div className="flex flex-wrap justify-center gap-4">
-                  {links.map((l) => (
-                    <Link
-                      key={l.to}
-                      to={l.to as any}
-                      className="font-sans-body inline-flex items-center gap-2 transition"
-                      style={{ fontSize: 14, fontWeight: 600, color: "#0D0D0D", textDecoration: "underline", textUnderlineOffset: 4 }}
+                {
+                  icon: <Mail size={18} color="#C0392B" />,
+                  label: "E-mail",
+                  value: "contato@toob.com.br",
+                },
+                {
+                  icon: <MapPin size={18} color="#C0392B" />,
+                  label: "Localização",
+                  value: "São Paulo, SP — Brasil",
+                },
+                {
+                  icon: <Clock size={18} color="#C0392B" />,
+                  label: "Horário de atendimento",
+                  value: "Segunda a sexta, das 8h às 18h",
+                },
+              ].map((info) => (
+                <div
+                  key={info.label}
+                  className="card"
+                  style={{ padding: "20px 24px", display: "flex", alignItems: "flex-start", gap: 16 }}
+                >
+                  <div style={{ marginTop: 2 }}>{info.icon}</div>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 11,
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.15em",
+                        color: "#5D5D5D",
+                        fontFamily: "Barlow, sans-serif",
+                        marginBottom: 4,
+                      }}
                     >
-                      {l.label} <ArrowRight size={14} />
-                    </Link>
-                  ))}
+                      {info.label}
+                    </div>
+                    <div style={{ fontSize: 15, color: "#0D0D0D", fontFamily: "Barlow, sans-serif" }}>
+                      {info.value}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* ── FORMULÁRIO ── */}
+      <WhatsAppForm
+        id="formulario"
+        title="Solicite seu orçamento"
+        dark={true}
+        fields={[
+          { name: "nome", label: "Seu nome", type: "text" },
+          { name: "empresa", label: "Empresa", type: "text" },
+          { name: "servico", label: "Serviço de interesse", type: "select", options: ["Locação de Caminhões", "Locação de Equipamentos", "Compra e Venda", "Outro"] },
+          { name: "mensagem", label: "Descreva sua necessidade", type: "text" },
+        ]}
+        buildMessage={(v) =>
+          `Olá! Gostaria de um orçamento.\n\nNome: ${v.nome}\nEmpresa: ${v.empresa}\nServiço: ${v.servico}\nMensagem: ${v.mensagem}`
+        }
+      />
     </>
   );
 }

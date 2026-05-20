@@ -1,7 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Package } from "lucide-react";
-import { HeroReveal, Reveal, RevealStagger, RevealItem } from "../components/Reveal";
-import { TiltCard } from "../components/TiltCard";
 import { WhatsAppForm } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/equipamentos")({
@@ -10,117 +7,192 @@ export const Route = createFileRoute("/equipamentos")({
 });
 
 const equipamentos = [
-  { name: "Prensa", icon: "⚙️", desc: "Para compactação de resíduos industriais e recicláveis." },
-  { name: "Empilhadeira", icon: "🏭", desc: "Movimentação de cargas em ambientes internos e externos." },
-  { name: "Cavalo Mecânico", icon: "🚛", desc: "Tração para operações logísticas de longa distância." },
-  { name: "Syder", icon: "🔩", desc: "Equipamento de apoio para operações especializadas." },
-  { name: "Caçamba Roll-On", icon: "📦", desc: "Coleta e transporte de resíduos industriais e entulho." },
-  { name: "Outros Equipamentos", icon: "➕", desc: "Consulte disponibilidade para necessidades específicas." },
-];
-
-const prazos = [
-  { label: "Diário", desc: "Para necessidades pontuais e urgentes." },
-  { label: "Semanal", desc: "Projetos com prazo definido." },
-  { label: "Mensal", desc: "Operações contínuas e recorrentes." },
+  {
+    nome: "Prensa de Resíduos",
+    desc: "Para compactação de materiais recicláveis e resíduos industriais. Aumenta a eficiência da sua operação de reciclagem.",
+  },
+  {
+    nome: "Empilhadeira",
+    desc: "Movimentação interna de carga com segurança e agilidade. Ideal para armazéns, galpões e operações logísticas.",
+  },
+  {
+    nome: "Caçamba Estacionária",
+    desc: "Para armazenamento e coleta de resíduos sólidos em obras, indústrias e grandes centros de geração.",
+  },
+  {
+    nome: "Caçamba Roll-On",
+    desc: "Integrada ao caminhão roll-on para coleta e transporte eficiente. Disponível em diferentes volumes.",
+  },
+  {
+    nome: "Esteira Transportadora",
+    desc: "Para triagem e movimentação de materiais em linhas de separação e plantas de reciclagem.",
+  },
+  {
+    nome: "Balança de Piso",
+    desc: "Controle de pesagem de entrada e saída de resíduos e materiais. Homologada e calibrada.",
+  },
 ];
 
 function EquipamentosPage() {
   return (
     <>
+      {/* ── HERO ── */}
       <section
-        className="relative flex min-h-[65vh] items-end overflow-hidden text-white"
         style={{
+          minHeight: "60vh",
+          display: "flex",
+          alignItems: "flex-end",
           backgroundImage: [
-            "linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.5) 40%, rgba(13,13,13,0.95) 100%)",
+            "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
             "url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80&auto=format')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",
+          color: "#fff",
         }}
       >
-        <div className="container-x relative z-10 w-full pb-20 pt-36">
-          <HeroReveal>
-            <div className="eyebrow" style={{ color: "#C0392B" }}>Serviços · Locação de Equipamentos</div>
-          </HeroReveal>
-          <HeroReveal delay={0.1}>
-            <h1 className="font-display mt-5 max-w-4xl text-white" style={{ fontSize: "clamp(48px,6.5vw,80px)", lineHeight: 1.05 }}>
-              Mais do que caminhões. Equipamentos completos para a sua operação.
-            </h1>
-          </HeroReveal>
-          <HeroReveal delay={0.22}>
-            <p className="font-sans-body mt-6 max-w-2xl" style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.65 }}>
-              A Toob disponibiliza uma linha de equipamentos para apoiar operações industriais, logísticas e de resíduos,
-              com os mesmos prazos flexíveis que só a Toob oferece.
-            </p>
-          </HeroReveal>
+        <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
+          <div className="eyebrow" style={{ color: "#C0392B" }}>Locação de Equipamentos</div>
+          <h1
+            className="font-display"
+            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
+          >
+            O equipamento certo, no prazo que faz sentido.
+          </h1>
+          <p
+            style={{
+              marginTop: 20,
+              fontSize: 17,
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.72)",
+              maxWidth: 520,
+              fontFamily: "Barlow, sans-serif",
+            }}
+          >
+            Prensas, empilhadeiras, caçambas e muito mais. Locação com contrato flexível
+            e atendimento direto.
+          </p>
         </div>
       </section>
 
-      <section className="py-28" style={{ background: "#F5F5F5" }}>
+      {/* ── EQUIPAMENTOS ── */}
+      <section style={{ background: "#fff", padding: "80px 0" }}>
         <div className="container-x">
-          <Reveal><div className="eyebrow" style={{ color: "#C0392B" }}>Portfólio</div></Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display mt-3" style={{ fontSize: "clamp(40px,5.5vw,60px)", color: "#0D0D0D" }}>
-              Equipamentos disponíveis para locação.
-            </h2>
-          </Reveal>
+          <div className="eyebrow">Linha de equipamentos</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
+          >
+            O que temos disponível.
+          </h2>
 
-          <RevealStagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {equipamentos.map((eq) => (
-              <RevealItem key={eq.name}>
-                <TiltCard className="card-light flex h-full flex-col p-7">
-                  <div style={{ fontSize: 36, marginBottom: 16 }}>{eq.icon}</div>
-                  <h3 className="font-display" style={{ fontSize: 28, color: "#0D0D0D" }}>{eq.name}</h3>
-                  <p className="font-sans-body mt-3 flex-1" style={{ fontSize: 14, lineHeight: 1.65, color: "#5D5D5D" }}>
-                    {eq.desc}
-                  </p>
-                  <a
-                    href="#formulario"
-                    className="font-display mt-6 inline-flex items-center gap-2 uppercase tracking-widest"
-                    style={{ fontSize: 13, color: "#C0392B" }}
-                  >
-                    {eq.name === "Outros Equipamentos" ? "Consultar Disponibilidade" : "Tenho Interesse"} <ArrowRight size={15} />
-                  </a>
-                </TiltCard>
-              </RevealItem>
+          <div
+            style={{
+              marginTop: 40,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 20,
+            }}
+          >
+            {equipamentos.map((e) => (
+              <div
+                key={e.nome}
+                className="card"
+                style={{ padding: 28 }}
+              >
+                <div
+                  style={{
+                    width: 40,
+                    height: 4,
+                    background: "#C0392B",
+                    borderRadius: 2,
+                    marginBottom: 20,
+                  }}
+                />
+                <h3 className="font-display" style={{ fontSize: 26, color: "#0D0D0D" }}>
+                  {e.nome}
+                </h3>
+                <p
+                  style={{
+                    marginTop: 10,
+                    fontSize: 14,
+                    lineHeight: 1.7,
+                    color: "#5D5D5D",
+                    fontFamily: "Barlow, sans-serif",
+                  }}
+                >
+                  {e.desc}
+                </p>
+              </div>
             ))}
-          </RevealStagger>
+          </div>
         </div>
       </section>
 
-      <section className="py-20" style={{ background: "#0D0D0D" }}>
+      {/* ── PRAZOS ── */}
+      <section style={{ background: "#F5F5F5", padding: "80px 0" }}>
         <div className="container-x">
-          <Reveal>
-            <h2 className="font-display text-center text-white" style={{ fontSize: "clamp(36px,5vw,56px)" }}>
-              Prazos que se adaptam a você.
-            </h2>
-          </Reveal>
-          <RevealStagger className="mt-12 grid gap-6 md:grid-cols-3">
-            {prazos.map((p) => (
-              <RevealItem key={p.label}>
-                <div style={{ background: "#161616", borderRadius: 16, padding: "32px 24px", border: "1px solid rgba(255,255,255,0.06)", textAlign: "center" }}>
-                  <h3 className="font-display text-white" style={{ fontSize: 40 }}>{p.label}</h3>
-                  <p className="font-sans-body mt-3" style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.6 }}>{p.desc}</p>
-                </div>
-              </RevealItem>
+          <div className="eyebrow">Modalidades</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
+          >
+            Locação no prazo que sua operação precisa.
+          </h2>
+          <p
+            style={{
+              marginTop: 16,
+              fontSize: 16,
+              lineHeight: 1.75,
+              color: "#5D5D5D",
+              maxWidth: 640,
+              fontFamily: "Barlow, sans-serif",
+            }}
+          >
+            Todos os equipamentos disponíveis em contratos diários, semanais ou mensais.
+            Sem mínimo obrigatório, sem multa por devolução antecipada. A operação manda.
+          </p>
+
+          <div
+            style={{
+              marginTop: 40,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: 16,
+            }}
+          >
+            {["Diário", "Semanal", "Mensal"].map((p) => (
+              <div
+                key={p}
+                style={{
+                  background: "#fff",
+                  border: "1px solid #E5E5E5",
+                  borderTop: "3px solid #C0392B",
+                  borderRadius: 8,
+                  padding: "24px 20px",
+                }}
+              >
+                <h3 className="font-display" style={{ fontSize: 28, color: "#0D0D0D" }}>{p}</h3>
+              </div>
             ))}
-          </RevealStagger>
+          </div>
         </div>
       </section>
 
+      {/* ── FORMULÁRIO ── */}
       <WhatsAppForm
-        id="formulario"
-        title="Solicite sua proposta"
+        id="solicitar"
+        title="Solicite sua locação de equipamento"
+        dark={true}
         fields={[
-          { name: "nome", label: "Nome completo", type: "text" },
+          { name: "nome", label: "Seu nome", type: "text" },
           { name: "empresa", label: "Empresa", type: "text" },
-          { name: "ramo", label: "Ramo de atuação", type: "text" },
-          { name: "equipamento", label: "Equipamento de interesse", type: "select", options: ["Prensa", "Empilhadeira", "Cavalo Mecânico", "Syder", "Caçamba Roll-On", "Outro"] },
-          { name: "prazo", label: "Tempo de locação", type: "select", options: ["Diário", "Semanal", "Mensal", "A definir"] },
-          { name: "inicio", label: "Previsão de início", type: "date" },
+          { name: "equipamento", label: "Equipamento", type: "select", options: ["Prensa de Resíduos", "Empilhadeira", "Caçamba Estacionária", "Caçamba Roll-On", "Esteira Transportadora", "Balança de Piso", "Outro"] },
+          { name: "prazo", label: "Prazo desejado", type: "select", options: ["Diário", "Semanal", "Mensal"] },
+          { name: "inicio", label: "Data de início", type: "date" },
         ]}
         buildMessage={(v) =>
-          `Olá, Toob! Me chamo ${v.nome}, da empresa ${v.empresa}, atuamos no ramo de ${v.ramo}. Tenho interesse na locação de ${v.equipamento}, pelo período ${v.prazo}, com início previsto para ${v.inicio}. Aguardo contato.`
+          `Olá! Tenho interesse em locar um equipamento.\n\nNome: ${v.nome}\nEmpresa: ${v.empresa}\nEquipamento: ${v.equipamento}\nPrazo: ${v.prazo}\nInício: ${v.inicio}`
         }
       />
     </>

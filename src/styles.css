@@ -1,166 +1,55 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-display: "Bebas Neue", system-ui, sans-serif;
   --font-sans: "Barlow", system-ui, sans-serif;
-  --radius: 12px;
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand-red: var(--brand-red);
-  --color-brand-black: var(--brand-black);
-  --color-brand-gray: var(--brand-gray);
-  --color-brand-white: var(--brand-white);
-  --color-surface: var(--surface);
-  --color-surface-alt: var(--surface-alt);
-  --color-border: var(--border);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
 }
 
 :root {
-  --brand-red:   #c0392b;
-  --brand-black: #0d0d0d;
-  --brand-gray:  #5d5d5d;
-  --brand-white: #ffffff;
+  --red:     #C0392B;
+  --black:   #0D0D0D;
+  --gray:    #5D5D5D;
+  --white:   #FFFFFF;
+  --surface: #F5F5F5;
+  --border:  #E5E5E5;
 
+  /* shadcn compat */
   --background: #ffffff;
   --foreground: #0d0d0d;
-  --surface: #ffffff;
-  --surface-alt: #f5f5f5;
-
-  --primary: #c0392b;
+  --primary: #C0392B;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #0d0d0d;
-  --accent: #c0392b;
-  --accent-foreground: #ffffff;
   --muted: #f5f5f5;
   --muted-foreground: #5d5d5d;
-  --card: #ffffff;
-  --card-foreground: #0d0d0d;
-  --popover: #ffffff;
-  --popover-foreground: #0d0d0d;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #c0392b;
-  --destructive: #c0392b;
-  --destructive-foreground: #ffffff;
-  --radius: 12px;
+  --ring: #C0392B;
+  --radius: 8px;
 }
 
 @layer base {
-  * { border-color: var(--color-border); box-sizing: border-box; }
+  * { box-sizing: border-box; }
   html, body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
+    background: #fff;
+    color: var(--black);
+    font-family: "Barlow", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-display);
+    font-family: "Bebas Neue", system-ui, sans-serif;
     font-weight: 400;
-    letter-spacing: 0.01em;
     line-height: 1.05;
+    letter-spacing: 0.01em;
   }
+  a { text-decoration: none; }
 }
 
 @layer utilities {
-  .font-display   { font-family: var(--font-display); }
-  .font-sans-body { font-family: var(--font-sans); }
-
-  .eyebrow {
-    font-family: var(--font-sans);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 11px;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    background: var(--brand-red); color: #fff;
-    font-family: var(--font-display); font-size: 16px;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 16px 32px;
-    border: 2px solid var(--brand-red);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
-  }
-  .btn-primary:hover {
-    background: #a82e22; border-color: #a82e22;
-    box-shadow: 0 8px 24px rgba(192,57,43,0.35);
-    transform: translateY(-1px);
-  }
-
-  .btn-outline {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    background: transparent; color: #fff;
-    font-family: var(--font-display); font-size: 16px;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 16px 32px;
-    border: 2px solid rgba(255,255,255,0.6);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease, border-color .2s ease;
-  }
-  .btn-outline:hover {
-    background: rgba(255,255,255,0.12);
-    border-color: #fff;
-  }
-
-  .btn-outline-dark {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    background: transparent; color: var(--brand-black);
-    font-family: var(--font-display); font-size: 16px;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 16px 32px;
-    border: 2px solid var(--brand-black);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease;
-  }
-  .btn-outline-dark:hover { background: var(--brand-black); color: #fff; }
-
-  .btn-whatsapp {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    background: #25D366; color: #fff;
-    font-family: var(--font-display); font-size: 18px;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 18px 36px;
-    border: 2px solid #25D366;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
-  }
-  .btn-whatsapp:hover {
-    background: #1da851; border-color: #1da851;
-    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-    transform: translateY(-1px);
-  }
-
   /* Layout */
   .container-x {
     max-width: 1280px;
@@ -168,117 +57,142 @@
     padding-inline: clamp(20px, 5vw, 80px);
   }
 
+  /* Typography */
+  .eyebrow {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red);
+  }
+  .font-display { font-family: "Bebas Neue", system-ui, sans-serif; }
+  .font-body    { font-family: "Barlow", system-ui, sans-serif; }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--red);
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 2px solid var(--red);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-primary:hover { background: #a82e22; border-color: #a82e22; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 2px solid rgba(255,255,255,0.45);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--black);
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 2px solid var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-dark:hover { background: #2a2a2a; border-color: #2a2a2a; }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border: 2px solid #25D366;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+  }
+  .btn-whatsapp:hover { background: #1da851; border-color: #1da851; }
+
   /* Cards */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
   .card-dark {
     background: #161616;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-  }
-  .card-dark:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 48px rgba(0,0,0,0.5);
-    border-color: rgba(192,57,43,0.3);
-  }
-  .card-light {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    transition: transform .3s ease, box-shadow .3s ease;
-  }
-  .card-light:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    overflow: hidden;
   }
 
-  /* Form inputs */
-  .input-field {
-    width: 100%;
-    border: 2px solid #e5e5e5;
-    background: #fafafa;
-    border-radius: 10px;
-    padding: 14px 18px;
-    font-family: var(--font-sans);
-    font-size: 15px;
-    color: var(--brand-black);
-    transition: border-color .2s ease, box-shadow .2s ease;
-    outline: none;
-  }
-  .input-field:focus {
-    border-color: var(--brand-red);
-    box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
-    background: #fff;
-  }
-  .input-label {
-    font-family: var(--font-sans);
+  /* Form */
+  .field-label {
+    display: block;
+    font-family: "Barlow", sans-serif;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--brand-gray);
     margin-bottom: 6px;
-    display: block;
   }
-
-  /* Tags / badges */
-  .badge-red {
-    display: inline-block;
-    background: var(--brand-red);
-    color: #fff;
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    padding: 4px 10px;
-    border-radius: 100px;
+  .field-input {
+    width: 100%;
+    background: #fafafa;
+    color: var(--black);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-family: "Barlow", sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: auto;
   }
-  .badge-outline {
-    display: inline-block;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.7);
-    font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 100px;
+  .field-input:focus { border-color: var(--red); background: #fff; }
+
+  /* Divider */
+  .divider-red {
+    border: none;
+    height: 2px;
+    background: var(--red);
   }
-}
-
-/* Animations */
-@keyframes spin-y {
-  0%   { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
-.spin-y { animation: spin-y 8s ease-in-out infinite alternate; transform-style: preserve-3d; }
-
-@keyframes bounce-soft {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50%       { transform: translateY(10px); opacity: 1; }
-}
-.bounce-soft { animation: bounce-soft 2s ease-in-out infinite; }
-
-@keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.4); opacity: 0.7; }
-}
-
-/* Lenis */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
-
-/* Custom cursor */
-#custom-cursor {
-  pointer-events: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 14px; height: 14px;
-  background: #C0392B;
-  border-radius: 50%;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform .1s ease, width .2s ease, height .2s ease, opacity .2s ease;
 }

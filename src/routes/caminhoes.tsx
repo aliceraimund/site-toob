@@ -1,156 +1,193 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Calendar, CalendarDays, CalendarRange } from "lucide-react";
-import { Reveal, RevealStagger, RevealItem, TextReveal } from "../components/Reveal";
-import { TiltCard } from "../components/TiltCard";
+import { ArrowRight } from "lucide-react";
 import { WhatsAppForm } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/caminhoes")({
-  head: () => ({
-    meta: [
-      { title: "Locação de Caminhões Roll-On — Toob" },
-      {
-        name: "description",
-        content:
-          "Caminhões roll-on a combustão e a gás para locação com prazos diários, semanais ou mensais. Frota com telemetria 100% ativa e redução de até 99,7% nas emissões.",
-      },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Locação de Caminhões — Toob" }] }),
   component: CaminhoesPage,
 });
 
 function CaminhoesPage() {
-  const message = (v: Record<string, string>) =>
-    `Olá, Toob! Me chamo ${v.nome}, da empresa ${v.empresa}, atuamos no ramo de ${v.ramo}. Tenho interesse na locação de um caminhão roll-on ${v.tipo}, pelo período ${v.prazo}, com início previsto para ${v.inicio}. Aguardo contato.`;
-
   return (
     <>
-      <HeroDark
-        eyebrow="Serviços · Locação de Caminhões"
-        title="Caminhões roll-on disponíveis quando você precisa. Pelo tempo que fizer sentido."
-        subtitle="Frota a combustão e a gás para operações industriais, logísticas e de resíduos. Prazos diários, semanais ou mensais. Sem contratos longos, sem burocracia."
-      />
-
-      <section className="bg-[#F5F5F5] py-24">
-        <div className="container-x grid gap-6 md:grid-cols-2">
-          <Reveal>
-            <TiltCard className="h-full bg-[#0D0D0D] p-8 text-white">
-              <h3 className="font-display text-4xl">Caminhão Roll-On a Combustão</h3>
-              <p className="mt-5 font-sans-body text-[15px] leading-relaxed text-white/75">
-                Frota robusta e versátil para operações de qualquer escala. Ideal para movimentação
-                de caçambas, resíduos industriais, cargas especiais e apoio logístico em rotas consolidadas.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {["Infraestrutura diesel", "Alta disponibilidade", "Curto prazo"].map((t) => (
-                  <span key={t} className="border border-white/25 px-3 py-1 font-sans-body text-xs text-white/80">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <a href="#form" className="btn-primary mt-8">Tenho interesse</a>
-            </TiltCard>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <TiltCard
-              className="relative h-full bg-[#0D0D0D] p-8 text-white"
-              style={{ borderTop: "4px solid #C0392B" }}
-            >
-              <span className="absolute right-6 top-6 bg-[#C0392B] px-3 py-1 font-sans-body text-[11px] font-semibold uppercase tracking-[0.15em] text-white">
-                Operação sustentável
-              </span>
-              <h3 className="font-display text-4xl">Caminhão Roll-On a Gás</h3>
-              <p className="mt-5 font-sans-body text-[15px] leading-relaxed text-white/75">
-                Mesma eficiência operacional do caminhão a combustão, com impacto ambiental
-                comprovadamente menor. Apto para longas distâncias e com telemetria 100% ativa.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "↓ até 99,7% nas emissões de CO₂",
-                  "100% rastreados com telemetria",
-                  "Inventário mensal de emissões",
-                  "Apto para longas distâncias",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-3 font-sans-body text-sm text-white/85">
-                    <Check size={18} className="mt-0.5 shrink-0 text-[#C0392B]" /> {t}
-                  </li>
-                ))}
-              </ul>
-              <a href="#form" className="btn-primary mt-8">Tenho interesse</a>
-            </TiltCard>
-          </Reveal>
+      {/* ── HERO ── */}
+      <section
+        style={{
+          minHeight: "60vh",
+          display: "flex",
+          alignItems: "flex-end",
+          backgroundImage: [
+            "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
+            "url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=80&auto=format')",
+          ].join(", "),
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "#fff",
+        }}
+      >
+        <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
+          <div className="eyebrow" style={{ color: "#C0392B" }}>Locação de Caminhões</div>
+          <h1
+            className="font-display"
+            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
+          >
+            Frota roll-on pronta para a sua operação.
+          </h1>
+          <p
+            style={{
+              marginTop: 20,
+              fontSize: 17,
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.72)",
+              maxWidth: 520,
+              fontFamily: "Barlow, sans-serif",
+            }}
+          >
+            Caminhões roll-on à combustão e a gás, com prazos diários, semanais ou mensais.
+            Disponibilidade ágil e atendimento direto.
+          </p>
         </div>
       </section>
 
-      <PrazosSection />
+      {/* ── OPÇÕES DE FROTA ── */}
+      <section style={{ background: "#fff", padding: "80px 0" }}>
+        <div className="container-x">
+          <div className="eyebrow">Nossa frota</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
+          >
+            Duas opções para a sua necessidade.
+          </h2>
 
+          <div
+            style={{
+              marginTop: 40,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 24,
+            }}
+          >
+            {/* Combustão */}
+            <div className="card" style={{ padding: 36 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "#0D0D0D",
+                  color: "#fff",
+                  fontFamily: "Barlow, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15em",
+                  padding: "4px 12px",
+                  borderRadius: 100,
+                  marginBottom: 20,
+                }}
+              >
+                Combustão
+              </div>
+              <h3 className="font-display" style={{ fontSize: 32, color: "#0D0D0D" }}>
+                Caminhão Roll-On Diesel
+              </h3>
+              <p style={{ marginTop: 12, fontSize: 15, lineHeight: 1.75, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+                Frota versátil para operações industriais, logísticas e de gestão de resíduos.
+                Ideal para quem precisa de volume e disponibilidade imediata.
+              </p>
+              <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Barlow, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
+                {["Alta disponibilidade de frota", "Contratos diários, semanais ou mensais", "Rastreamento incluso"].map((item) => (
+                  <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ color: "#C0392B", fontWeight: 700 }}>—</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="#solicitar" className="btn-dark" style={{ marginTop: 32, display: "inline-flex" }}>
+                Solicitar <ArrowRight size={16} />
+              </a>
+            </div>
+
+            {/* Gás */}
+            <div className="card" style={{ padding: 36, borderColor: "#C0392B", borderWidth: 2 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "#C0392B",
+                  color: "#fff",
+                  fontFamily: "Barlow, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15em",
+                  padding: "4px 12px",
+                  borderRadius: 100,
+                  marginBottom: 20,
+                }}
+              >
+                Gás Natural — Sustentável
+              </div>
+              <h3 className="font-display" style={{ fontSize: 32, color: "#0D0D0D" }}>
+                Caminhão Roll-On a Gás
+              </h3>
+              <p style={{ marginTop: 12, fontSize: 15, lineHeight: 1.75, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+                Redução comprovada de 15% a 99,7% nas emissões de CO₂ com base na metodologia
+                GHG Protocol. A escolha certa para empresas com compromissos ESG.
+              </p>
+              <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Barlow, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
+                {["Inventário de emissões mensal", "Dados prontos para relatórios ESG", "100% rastreado por telemetria"].map((item) => (
+                  <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ color: "#C0392B", fontWeight: 700 }}>—</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="#solicitar" className="btn-primary" style={{ marginTop: 32, display: "inline-flex" }}>
+                Solicitar <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRAZOS ── */}
+      <section style={{ background: "#0D0D0D", padding: "80px 0" }}>
+        <div className="container-x">
+          <div className="eyebrow">Modalidades de locação</div>
+          <h2 className="font-display" style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#fff" }}>
+            Você escolhe o prazo.
+          </h2>
+
+          <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
+            {[
+              { prazo: "Diário", desc: "Para demandas pontuais ou operações que variam dia a dia." },
+              { prazo: "Semanal", desc: "Flexibilidade para projetos de curto prazo sem comprometimento longo." },
+              { prazo: "Mensal", desc: "Estabilidade operacional com a liberdade de ajustar quando necessário." },
+            ].map((p) => (
+              <div key={p.prazo} className="card-dark" style={{ padding: 28, borderTop: "3px solid #C0392B" }}>
+                <h3 className="font-display" style={{ fontSize: 32, color: "#fff" }}>{p.prazo}</h3>
+                <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.55)", fontFamily: "Barlow, sans-serif" }}>
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FORMULÁRIO ── */}
       <WhatsAppForm
-        id="form"
-        title="Solicite sua proposta"
+        id="solicitar"
+        title="Solicite sua locação de caminhão"
+        dark={false}
         fields={[
-          { name: "nome", label: "Nome completo", type: "text" },
+          { name: "nome", label: "Seu nome", type: "text" },
           { name: "empresa", label: "Empresa", type: "text" },
-          { name: "ramo", label: "Ramo de atuação", type: "text" },
-          { name: "tipo", label: "Tipo de caminhão", type: "select", options: ["À combustão", "À gás", "Ainda não sei"] },
-          { name: "prazo", label: "Tempo de locação", type: "select", options: ["Diário", "Semanal", "Mensal", "A definir"] },
-          { name: "inicio", label: "Previsão de início", type: "date" },
+          { name: "tipo", label: "Tipo de caminhão", type: "select", options: ["Diesel (combustão)", "Gás natural"] },
+          { name: "prazo", label: "Prazo desejado", type: "select", options: ["Diário", "Semanal", "Mensal"] },
+          { name: "inicio", label: "Data de início", type: "date" },
         ]}
-        buildMessage={message}
+        buildMessage={(v) =>
+          `Olá! Quero solicitar uma locação de caminhão.\n\nNome: ${v.nome}\nEmpresa: ${v.empresa}\nTipo: ${v.tipo}\nPrazo: ${v.prazo}\nInício: ${v.inicio}`
+        }
       />
     </>
-  );
-}
-
-export function HeroDark({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
-  return (
-    <section className="relative flex min-h-[60vh] items-end bg-[#0D0D0D] text-white noise-bg">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(700px 400px at 80% 30%, rgba(192,57,43,0.18), transparent 60%), linear-gradient(180deg,#161616,#0D0D0D)",
-        }}
-      />
-      <div className="container-x relative z-10 py-24">
-        <Reveal>
-          <div className="eyebrow text-[#C0392B]">{eyebrow}</div>
-        </Reveal>
-        <h1 className="mt-5 max-w-4xl font-display text-white" style={{ fontSize: "clamp(40px,5.5vw,72px)" }}>
-          <TextReveal>{title}</TextReveal>
-        </h1>
-        <Reveal delay={0.2}>
-          <p className="mt-6 max-w-2xl font-sans-body text-[17px] text-[#9a9a9a]">{subtitle}</p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-export function PrazosSection() {
-  const items = [
-    { icon: Calendar, label: "Diário", body: "Para necessidades pontuais." },
-    { icon: CalendarDays, label: "Semanal", body: "Para projetos de curta duração." },
-    { icon: CalendarRange, label: "Mensal", body: "Para operações contínuas." },
-  ];
-  return (
-    <section className="bg-[#0D0D0D] py-24 text-white">
-      <div className="container-x">
-        <Reveal><div className="eyebrow text-[#C0392B]">Prazos</div></Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="mt-3 max-w-2xl font-display text-white" style={{ fontSize: "clamp(36px,5vw,56px)" }}>
-            <TextReveal>Você escolhe o prazo. A gente entrega.</TextReveal>
-          </h2>
-        </Reveal>
-        <RevealStagger className="mt-12 grid gap-6 md:grid-cols-3">
-          {items.map(({ icon: Icon, label, body }) => (
-            <RevealItem key={label}>
-              <TiltCard className="h-full bg-[#161616] p-8" style={{ borderTop: "2px solid #C0392B" }}>
-                <Icon size={32} className="text-[#C0392B]" />
-                <div className="mt-6 font-display text-3xl">{label}</div>
-                <p className="mt-3 font-sans-body text-sm text-white/70">{body}</p>
-              </TiltCard>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </div>
-    </section>
   );
 }
