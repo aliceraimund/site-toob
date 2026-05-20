@@ -19,7 +19,7 @@ function ContatoPage() {
         }}
       >
         <div className="container-x">
-          <div className="eyebrow" style={{ color: "#C0392B" }}>Fale com a Toob</div>
+          <div className="eyebrow" style={{ color: "#FF0000" }}>Fale com a Toob</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
@@ -33,7 +33,7 @@ function ContatoPage() {
               lineHeight: 1.65,
               color: "rgba(255,255,255,0.65)",
               maxWidth: 500,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Você fala diretamente com quem decide. Sem intermediários, sem formulário perdido,
@@ -84,7 +84,7 @@ function ContatoPage() {
                   fontSize: 15,
                   lineHeight: 1.65,
                   color: "rgba(255,255,255,0.6)",
-                  fontFamily: "Barlow, sans-serif",
+                  fontFamily: "Nunito, sans-serif",
                 }}
               >
                 A forma mais rápida de falar com a gente. Atendemos em tempo real durante o horário comercial.
@@ -100,7 +100,7 @@ function ContatoPage() {
                   marginTop: 24,
                   background: "#25D366",
                   color: "#fff",
-                  fontFamily: "Bebas Neue, sans-serif",
+                  fontFamily: "Nunito, sans-serif",
                   fontSize: 15,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -117,17 +117,17 @@ function ContatoPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
                 {
-                  icon: <Mail size={18} color="#C0392B" />,
+                  icon: <Mail size={18} color="#FF0000" />,
                   label: "E-mail",
                   value: "contato@toob.com.br",
                 },
                 {
-                  icon: <MapPin size={18} color="#C0392B" />,
+                  icon: <MapPin size={18} color="#FF0000" />,
                   label: "Localização",
                   value: "São Paulo, SP — Brasil",
                 },
                 {
-                  icon: <Clock size={18} color="#C0392B" />,
+                  icon: <Clock size={18} color="#FF0000" />,
                   label: "Horário de atendimento",
                   value: "Segunda a sexta, das 8h às 18h",
                 },
@@ -146,13 +146,13 @@ function ContatoPage() {
                         textTransform: "uppercase",
                         letterSpacing: "0.15em",
                         color: "#5D5D5D",
-                        fontFamily: "Barlow, sans-serif",
+                        fontFamily: "Nunito, sans-serif",
                         marginBottom: 4,
                       }}
                     >
                       {info.label}
                     </div>
-                    <div style={{ fontSize: 15, color: "#0D0D0D", fontFamily: "Barlow, sans-serif" }}>
+                    <div style={{ fontSize: 15, color: "#0D0D0D", fontFamily: "Nunito, sans-serif" }}>
                       {info.value}
                     </div>
                   </div>

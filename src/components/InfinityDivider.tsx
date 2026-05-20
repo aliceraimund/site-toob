@@ -1,7 +1,7 @@
 export function InfinityDivider() {
   return (
     <div className="relative w-full bg-[#0D0D0D] py-20">
-      <div className="absolute left-0 right-0 top-1/2 h-px bg-[#C0392B]/70" />
+      <div className="absolute left-0 right-0 top-1/2 h-px bg-[#FF0000]/70" />
       <div className="relative mx-auto flex items-center justify-center" style={{ perspective: 800 }}>
         <div
           className="relative bg-[#0D0D0D] px-8"

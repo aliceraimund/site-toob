@@ -42,7 +42,7 @@ function HomePage() {
             style={{ height: "clamp(80px, 14vw, 180px)", width: "auto", marginBottom: 36 }}
           />
 
-          <div className="eyebrow" style={{ color: "#C0392B" }}>
+          <div className="eyebrow" style={{ color: "#FF0000" }}>
             Locação de caminhões e equipamentos roll-on
           </div>
 
@@ -60,7 +60,7 @@ function HomePage() {
               lineHeight: 1.65,
               color: "rgba(255,255,255,0.75)",
               maxWidth: 540,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Diário, semanal ou mensal. Você escolhe o prazo que faz sentido para o
@@ -90,10 +90,10 @@ function HomePage() {
                   gap: 8,
                   fontSize: 13,
                   color: "rgba(255,255,255,0.65)",
-                  fontFamily: "Barlow, sans-serif",
+                  fontFamily: "Nunito, sans-serif",
                 }}
               >
-                <Check size={13} color="#C0392B" strokeWidth={3} />
+                <Check size={13} color="#FF0000" strokeWidth={3} />
                 {t}
               </span>
             ))}
@@ -141,7 +141,7 @@ function HomePage() {
               <div
                 key={c.title}
                 className="card"
-                style={{ padding: 32, borderLeft: "4px solid #C0392B" }}
+                style={{ padding: 32, borderLeft: "4px solid #FF0000" }}
               >
                 <h3
                   className="font-display"
@@ -155,11 +155,76 @@ function HomePage() {
                     fontSize: 15,
                     lineHeight: 1.7,
                     color: "#5D5D5D",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                   }}
                 >
                   {c.body}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PARALLAX ── */}
+      <section
+        style={{
+          backgroundImage: [
+            "linear-gradient(rgba(13,13,13,0.68), rgba(13,13,13,0.68))",
+            "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&auto=format')",
+          ].join(", "),
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "120px 0",
+          color: "#fff",
+        }}
+      >
+        <div className="container-x">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 0,
+              borderRadius: 20,
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
+            {[
+              { value: "Diário", label: "Prazo mínimo disponível" },
+              { value: "48h", label: "Proposta entregue em até" },
+              { value: "99,7%", label: "Redução de CO₂ na frota a gás" },
+              { value: "100%", label: "Dos veículos rastreados" },
+            ].map((s, i) => (
+              <div
+                key={s.label}
+                style={{
+                  padding: "40px 32px",
+                  background: i % 2 === 0 ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)",
+                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.1)" : "none",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  className="font-display"
+                  style={{ fontSize: "clamp(40px, 5vw, 64px)", color: "#FF0000", lineHeight: 1 }}
+                >
+                  {s.value}
+                </div>
+                <div
+                  style={{
+                    marginTop: 10,
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.6)",
+                    fontFamily: "Nunito, sans-serif",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                  }}
+                >
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
@@ -182,7 +247,7 @@ function HomePage() {
               fontSize: 17,
               color: "rgba(255,255,255,0.55)",
               maxWidth: 560,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Da locação pontual ao equipamento certo para o longo prazo.
@@ -234,8 +299,8 @@ function HomePage() {
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.15em",
-                      color: "#C0392B",
-                      fontFamily: "Barlow, sans-serif",
+                      color: "#FF0000",
+                      fontFamily: "Nunito, sans-serif",
                       marginBottom: 8,
                     }}
                   >
@@ -250,7 +315,7 @@ function HomePage() {
                       fontSize: 15,
                       lineHeight: 1.7,
                       color: "rgba(255,255,255,0.6)",
-                      fontFamily: "Barlow, sans-serif",
+                      fontFamily: "Nunito, sans-serif",
                     }}
                   >
                     {s.body}
@@ -263,10 +328,10 @@ function HomePage() {
                       gap: 8,
                       marginTop: 24,
                       fontSize: 14,
-                      fontFamily: "Bebas Neue, sans-serif",
+                      fontFamily: "Nunito, sans-serif",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      color: "#C0392B",
+                      color: "#FF0000",
                     }}
                   >
                     Saiba mais <ArrowRight size={15} />
@@ -333,7 +398,7 @@ function HomePage() {
                     fontSize: 15,
                     lineHeight: 1.7,
                     color: "#5D5D5D",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                   }}
                 >
                   {s.body}
@@ -345,7 +410,7 @@ function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#C0392B", padding: "96px 0" }}>
+      <section style={{ background: "#FF0000", padding: "96px 0" }}>
         <div className="container-x" style={{ textAlign: "center" }}>
           <h2
             className="font-display"
@@ -358,7 +423,7 @@ function HomePage() {
               marginTop: 20,
               fontSize: 18,
               color: "rgba(255,255,255,0.8)",
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Fale com a Toob agora. Sem enrolação, sem contrato longo obrigatório.
@@ -374,7 +439,7 @@ function HomePage() {
                 gap: 10,
                 background: "#fff",
                 color: "#0D0D0D",
-                fontFamily: "Bebas Neue, sans-serif",
+                fontFamily: "Nunito, sans-serif",
                 fontSize: 17,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",

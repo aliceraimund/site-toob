@@ -26,7 +26,7 @@ function SobrePage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
-          <div className="eyebrow" style={{ color: "#C0392B" }}>Sobre Nós</div>
+          <div className="eyebrow" style={{ color: "#FF0000" }}>Sobre Nós</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
@@ -40,7 +40,7 @@ function SobrePage() {
               lineHeight: 1.65,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 520,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Nascemos para resolver o que o mercado ignorava: a necessidade de locação rápida,
@@ -74,7 +74,7 @@ function SobrePage() {
                   fontSize: 16,
                   lineHeight: 1.8,
                   color: "#5D5D5D",
-                  fontFamily: "Barlow, sans-serif",
+                  fontFamily: "Nunito, sans-serif",
                 }}
               >
                 A Toob é uma empresa especializada em locação de caminhões roll-on, caçambas e
@@ -86,7 +86,7 @@ function SobrePage() {
                   fontSize: 16,
                   lineHeight: 1.8,
                   color: "#5D5D5D",
-                  fontFamily: "Barlow, sans-serif",
+                  fontFamily: "Nunito, sans-serif",
                 }}
               >
                 Enquanto o mercado exige contratos longos e burocracia, a Toob resolve em horas.
@@ -155,7 +155,7 @@ function SobrePage() {
                   style={{
                     width: 32,
                     height: 3,
-                    background: "#C0392B",
+                    background: "#FF0000",
                     borderRadius: 2,
                     marginBottom: 20,
                   }}
@@ -169,7 +169,7 @@ function SobrePage() {
                     fontSize: 15,
                     lineHeight: 1.75,
                     color: "rgba(255,255,255,0.6)",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                   }}
                 >
                   {v.body}
@@ -201,12 +201,12 @@ function SobrePage() {
             }}
           >
             <div>
-              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
                 A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos — são a mesma decisão.
                 Nossa frota inclui caminhões a gás com redução comprovada de 15% a 99,7% nas emissões de CO₂,
                 com base na metodologia GHG Protocol.
               </p>
-              <p style={{ marginTop: 16, fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Barlow, sans-serif" }}>
+              <p style={{ marginTop: 16, fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
                 Cada veículo é 100% rastreado por telemetria e emite inventário de emissões mensalmente —
                 dados que seus relatórios de sustentabilidade e exigências ESG podem usar diretamente.
               </p>
@@ -223,12 +223,12 @@ function SobrePage() {
                   style={{
                     background: "#fff",
                     border: "1px solid #E5E5E5",
-                    borderLeft: "4px solid #C0392B",
+                    borderLeft: "4px solid #FF0000",
                     borderRadius: 8,
                     padding: "24px 28px",
                   }}
                 >
-                  <div className="font-display" style={{ fontSize: 44, color: "#C0392B", lineHeight: 1 }}>
+                  <div className="font-display" style={{ fontSize: 44, color: "#FF0000", lineHeight: 1 }}>
                     {s.value}
                   </div>
                   <div
@@ -236,7 +236,7 @@ function SobrePage() {
                       marginTop: 6,
                       fontSize: 13,
                       color: "#5D5D5D",
-                      fontFamily: "Barlow, sans-serif",
+                      fontFamily: "Nunito, sans-serif",
                       fontWeight: 500,
                     }}
                   >
@@ -250,7 +250,7 @@ function SobrePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#C0392B", padding: "96px 0" }}>
+      <section style={{ background: "#FF0000", padding: "96px 0" }}>
         <div className="container-x" style={{ textAlign: "center" }}>
           <h2
             className="font-display"
@@ -269,7 +269,7 @@ function SobrePage() {
                 gap: 10,
                 background: "#fff",
                 color: "#0D0D0D",
-                fontFamily: "Bebas Neue, sans-serif",
+                fontFamily: "Nunito, sans-serif",
                 fontSize: 17,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",

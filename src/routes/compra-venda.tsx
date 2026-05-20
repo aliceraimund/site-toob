@@ -59,7 +59,7 @@ function CompraVendaPage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
-          <div className="eyebrow" style={{ color: "#C0392B" }}>Compra e Venda</div>
+          <div className="eyebrow" style={{ color: "#FF0000" }}>Compra e Venda</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
@@ -73,7 +73,7 @@ function CompraVendaPage() {
               lineHeight: 1.65,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 520,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Portfólio de ativos disponíveis para compra. Ou avalie sua frota e equipamentos
@@ -110,9 +110,9 @@ function CompraVendaPage() {
                 <div
                   style={{
                     display: "inline-block",
-                    background: item.tipo === "Venda" ? "#0D0D0D" : "#C0392B",
+                    background: item.tipo === "Venda" ? "#0D0D0D" : "#FF0000",
                     color: "#fff",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                     fontSize: 10,
                     fontWeight: 700,
                     textTransform: "uppercase",
@@ -133,7 +133,7 @@ function CompraVendaPage() {
                     fontSize: 14,
                     lineHeight: 1.7,
                     color: "#5D5D5D",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                   }}
                 >
                   {item.desc}
@@ -148,10 +148,10 @@ function CompraVendaPage() {
                     gap: 8,
                     marginTop: 20,
                     fontSize: 13,
-                    fontFamily: "Bebas Neue, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "#C0392B",
+                    color: "#FF0000",
                     textDecoration: "none",
                   }}
                 >
@@ -180,7 +180,7 @@ function CompraVendaPage() {
                 fontSize: 16,
                 lineHeight: 1.75,
                 color: "rgba(255,255,255,0.6)",
-                fontFamily: "Barlow, sans-serif",
+                fontFamily: "Nunito, sans-serif",
               }}
             >
               Mande os dados do que você quer vender — caminhões, equipamentos, caçambas.
@@ -200,7 +200,7 @@ function CompraVendaPage() {
                 gap: 10,
                 background: "#25D366",
                 color: "#fff",
-                fontFamily: "Bebas Neue, sans-serif",
+                fontFamily: "Nunito, sans-serif",
                 fontSize: 17,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",

@@ -52,7 +52,7 @@ function EquipamentosPage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
-          <div className="eyebrow" style={{ color: "#C0392B" }}>Locação de Equipamentos</div>
+          <div className="eyebrow" style={{ color: "#FF0000" }}>Locação de Equipamentos</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
@@ -66,7 +66,7 @@ function EquipamentosPage() {
               lineHeight: 1.65,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 520,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Prensas, empilhadeiras, caçambas e muito mais. Locação com contrato flexível
@@ -104,7 +104,7 @@ function EquipamentosPage() {
                   style={{
                     width: 40,
                     height: 4,
-                    background: "#C0392B",
+                    background: "#FF0000",
                     borderRadius: 2,
                     marginBottom: 20,
                   }}
@@ -118,7 +118,7 @@ function EquipamentosPage() {
                     fontSize: 14,
                     lineHeight: 1.7,
                     color: "#5D5D5D",
-                    fontFamily: "Barlow, sans-serif",
+                    fontFamily: "Nunito, sans-serif",
                   }}
                 >
                   {e.desc}
@@ -146,7 +146,7 @@ function EquipamentosPage() {
               lineHeight: 1.75,
               color: "#5D5D5D",
               maxWidth: 640,
-              fontFamily: "Barlow, sans-serif",
+              fontFamily: "Nunito, sans-serif",
             }}
           >
             Todos os equipamentos disponíveis em contratos diários, semanais ou mensais.
@@ -167,7 +167,7 @@ function EquipamentosPage() {
                 style={{
                   background: "#fff",
                   border: "1px solid #E5E5E5",
-                  borderTop: "3px solid #C0392B",
+                  borderTop: "3px solid #FF0000",
                   borderRadius: 8,
                   padding: "24px 20px",
                 }}

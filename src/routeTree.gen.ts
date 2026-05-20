@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SetoresRouteImport } from './routes/setores'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as EquipamentosRouteImport } from './routes/equipamentos'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -16,6 +17,11 @@ import { Route as CompraVendaRouteImport } from './routes/compra-venda'
 import { Route as CaminhoesRouteImport } from './routes/caminhoes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SetoresRoute = SetoresRouteImport.update({
+  id: '/setores',
+  path: '/setores',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/compra-venda': typeof CompraVendaRoute
   '/contato': typeof ContatoRoute
   '/equipamentos': typeof EquipamentosRoute
+  '/setores': typeof SetoresRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/compra-venda': typeof CompraVendaRoute
   '/contato': typeof ContatoRoute
   '/equipamentos': typeof EquipamentosRoute
+  '/setores': typeof SetoresRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/compra-venda': typeof CompraVendaRoute
   '/contato': typeof ContatoRoute
   '/equipamentos': typeof EquipamentosRoute
+  '/setores': typeof SetoresRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/compra-venda'
     | '/contato'
     | '/equipamentos'
+    | '/setores'
     | '/sobre'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/compra-venda'
     | '/contato'
     | '/equipamentos'
+    | '/setores'
     | '/sobre'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/compra-venda'
     | '/contato'
     | '/equipamentos'
+    | '/setores'
     | '/sobre'
   fileRoutesById: FileRoutesById
 }
@@ -105,11 +117,19 @@ export interface RootRouteChildren {
   CompraVendaRoute: typeof CompraVendaRoute
   ContatoRoute: typeof ContatoRoute
   EquipamentosRoute: typeof EquipamentosRoute
+  SetoresRoute: typeof SetoresRoute
   SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/setores': {
+      id: '/setores'
+      path: '/setores'
+      fullPath: '/setores'
+      preLoaderRoute: typeof SetoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompraVendaRoute: CompraVendaRoute,
   ContatoRoute: ContatoRoute,
   EquipamentosRoute: EquipamentosRoute,
+  SetoresRoute: SetoresRoute,
   SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport

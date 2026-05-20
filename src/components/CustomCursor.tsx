@@ -43,7 +43,7 @@ export function CustomCursor() {
         width: 16,
         height: 16,
         borderRadius: "50%",
-        background: "#C0392B",
+        background: "#FF0000",
         mixBlendMode: "difference",
         transition: "width .2s ease, height .2s ease, opacity .2s ease",
         ...(hover ? { width: 32, height: 32, opacity: 0.7 } : { opacity: 0.9 }),

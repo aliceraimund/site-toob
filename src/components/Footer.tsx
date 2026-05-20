@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#C0392B] bg-[#0D0D0D] text-white">
+    <footer className="border-t border-[#FF0000] bg-[#0D0D0D] text-white">
       <div className="container-x grid gap-8 py-12 md:grid-cols-3 md:items-center">
         <div>
           <img
@@ -15,10 +15,10 @@ export function Footer() {
           />
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans-body text-sm text-white/80">
-          <Link to="/" className="hover:text-[#C0392B]">Home</Link>
-          <Link to="/caminhoes" className="hover:text-[#C0392B]">Serviços</Link>
-          <Link to="/sobre" className="hover:text-[#C0392B]">Sobre Nós</Link>
-          <Link to="/contato" className="hover:text-[#C0392B]">Contato</Link>
+          <Link to="/" className="hover:text-[#FF0000]">Home</Link>
+          <Link to="/caminhoes" className="hover:text-[#FF0000]">Serviços</Link>
+          <Link to="/sobre" className="hover:text-[#FF0000]">Sobre Nós</Link>
+          <Link to="/contato" className="hover:text-[#FF0000]">Contato</Link>
         </nav>
         <div className="text-right text-xs text-white/60 md:text-right">
           <div>CNPJ: a preencher</div>

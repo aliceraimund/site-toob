@@ -47,7 +47,7 @@ export function Header() {
             <button className="group inline-flex items-center gap-1 font-sans-body font-medium text-white">
               <span className="relative">
                 Serviços
-                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#C0392B] transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#FF0000] transition-all group-hover:w-full" />
               </span>
               <ChevronDown size={14} />
             </button>
@@ -58,7 +58,7 @@ export function Header() {
                     <Link
                       key={s.to}
                       to={s.to}
-                      className="block px-5 py-3 font-sans-body text-sm text-white/85 transition hover:bg-white/5 hover:text-[#C0392B]"
+                      className="block px-5 py-3 font-sans-body text-sm text-white/85 transition hover:bg-white/5 hover:text-[#FF0000]"
                     >
                       {s.label}
                     </Link>
@@ -67,13 +67,14 @@ export function Header() {
               </div>
             )}
           </div>
+          <NavLink to="/setores" label="Setores" />
           <NavLink to="/sobre" label="Sobre Nós" />
           <NavLink to="/contato" label="Contato" />
         </nav>
 
         <Link
           to="/contato"
-          className="hidden items-center gap-2 bg-[#C0392B] px-5 py-3 font-display text-sm uppercase tracking-[0.1em] text-white transition hover:bg-[#a82e22] lg:inline-flex"
+          className="hidden items-center gap-2 bg-[#FF0000] px-5 py-3 font-display text-sm uppercase tracking-[0.06em] text-white transition hover:bg-[#CC0000] rounded-full lg:inline-flex"
         >
           Solicitar Orçamento <ArrowRight size={16} />
         </Link>
@@ -97,12 +98,13 @@ export function Header() {
                 <MobileLink key={s.to} to={s.to} label={s.label} onClick={() => setMobile(false)} />
               ))}
             </div>
+            <MobileLink to="/setores" label="Setores" onClick={() => setMobile(false)} />
             <MobileLink to="/sobre" label="Sobre Nós" onClick={() => setMobile(false)} />
             <MobileLink to="/contato" label="Contato" onClick={() => setMobile(false)} />
             <Link
               to="/contato"
               onClick={() => setMobile(false)}
-              className="mt-3 inline-flex items-center justify-center gap-2 bg-[#C0392B] px-5 py-3 font-display uppercase tracking-[0.1em] text-white"
+              className="mt-3 inline-flex items-center justify-center gap-2 bg-[#FF0000] px-5 py-3 font-display uppercase tracking-[0.1em] text-white"
             >
               Solicitar Orçamento <ArrowRight size={16} />
             </Link>
@@ -118,7 +120,7 @@ function NavLink({ to, label }: { to: any; label: string }) {
     <Link to={to} className="group relative font-sans-body font-medium text-white">
       <span className="relative">
         {label}
-        <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#C0392B] transition-all group-hover:w-full" />
+        <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#FF0000] transition-all group-hover:w-full" />
       </span>
     </Link>
   );

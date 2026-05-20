@@ -1,34 +1,37 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Bebas Neue", system-ui, sans-serif;
-  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
 }
 
 :root {
-  --red:     #C0392B;
+  --red:     #FF0000;
   --black:   #0D0D0D;
   --gray:    #5D5D5D;
   --white:   #FFFFFF;
   --surface: #F5F5F5;
   --border:  #E5E5E5;
+  --radius-sm:   12px;
+  --radius-md:   20px;
+  --radius-lg:   28px;
+  --radius-pill: 100px;
 
   /* shadcn compat */
   --background: #ffffff;
   --foreground: #0d0d0d;
-  --primary: #C0392B;
+  --primary: #FF0000;
   --primary-foreground: #ffffff;
   --muted: #f5f5f5;
   --muted-foreground: #5d5d5d;
-  --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #C0392B;
-  --radius: 8px;
+  --ring: #FF0000;
+  --radius: 12px;
 }
 
 @layer base {
@@ -36,163 +39,127 @@
   html, body {
     background: #fff;
     color: var(--black);
-    font-family: "Barlow", system-ui, sans-serif;
+    font-family: "Nunito", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
-    font-family: "Bebas Neue", system-ui, sans-serif;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: 0.01em;
+    font-family: "Nunito", system-ui, sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
   }
   a { text-decoration: none; }
 }
 
 @layer utilities {
-  /* Layout */
   .container-x {
     max-width: 1280px;
     margin-inline: auto;
     padding-inline: clamp(20px, 5vw, 80px);
   }
 
-  /* Typography */
   .eyebrow {
-    font-family: "Barlow", sans-serif;
-    font-weight: 600;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--red);
   }
-  .font-display { font-family: "Bebas Neue", system-ui, sans-serif; }
-  .font-body    { font-family: "Barlow", system-ui, sans-serif; }
+  .font-display { font-family: "Nunito", sans-serif; font-weight: 800; }
+  .font-body    { font-family: "Nunito", sans-serif; }
 
-  /* Buttons */
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: var(--red);
-    color: #fff;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border: 2px solid var(--red);
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--red); color: #fff;
+    font-family: "Nunito", sans-serif; font-size: 14px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 14px 30px; border: 2px solid var(--red);
+    border-radius: var(--radius-pill); cursor: pointer; text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
   }
-  .btn-primary:hover { background: #a82e22; border-color: #a82e22; }
+  .btn-primary:hover {
+    background: #CC0000; border-color: #CC0000;
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,0,0,0.3);
+  }
 
   .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: transparent;
-    color: #fff;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border: 2px solid rgba(255,255,255,0.45);
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: transparent; color: #fff;
+    font-family: "Nunito", sans-serif; font-size: 14px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 14px 30px; border: 2px solid rgba(255,255,255,0.45);
+    border-radius: var(--radius-pill); cursor: pointer; text-decoration: none;
     transition: border-color 0.2s, background 0.2s;
   }
-  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
 
   .btn-dark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: var(--black);
-    color: #fff;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border: 2px solid var(--black);
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--black); color: #fff;
+    font-family: "Nunito", sans-serif; font-size: 14px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 14px 30px; border: 2px solid var(--black);
+    border-radius: var(--radius-pill); cursor: pointer; text-decoration: none;
     transition: background 0.2s;
   }
   .btn-dark:hover { background: #2a2a2a; border-color: #2a2a2a; }
 
   .btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #25D366;
-    color: #fff;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 17px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 16px 32px;
-    border: 2px solid #25D366;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.2s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25D366; color: #fff;
+    font-family: "Nunito", sans-serif; font-size: 15px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 16px 32px; border: 2px solid #25D366;
+    border-radius: var(--radius-pill); cursor: pointer; width: 100%;
+    transition: background 0.2s, transform 0.15s;
   }
-  .btn-whatsapp:hover { background: #1da851; border-color: #1da851; }
+  .btn-whatsapp:hover { background: #1da851; border-color: #1da851; transform: translateY(-1px); }
 
-  /* Cards */
   .card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius-md); overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+
   .card-dark {
-    background: #161616;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    overflow: hidden;
+    background: #161616; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius-md); overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .card-dark:hover {
+    transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+    border-color: rgba(255,0,0,0.25);
   }
 
-  /* Form */
+  .card-sector {
+    background: #fff; border: 2px solid var(--border);
+    border-radius: var(--radius-md); padding: 28px;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card-sector:hover {
+    border-color: var(--red); transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(255,0,0,0.1);
+  }
+  .card-sector:hover .sector-icon { color: var(--red); }
+
   .field-label {
-    display: block;
-    font-family: "Barlow", sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 6px;
+    display: block; font-family: "Nunito", sans-serif;
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 6px;
   }
   .field-input {
-    width: 100%;
-    background: #fafafa;
-    color: var(--black);
-    border: 2px solid var(--border);
-    border-radius: 8px;
-    padding: 13px 16px;
-    font-family: "Barlow", sans-serif;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s;
-    appearance: auto;
+    width: 100%; background: #fafafa; color: var(--black);
+    border: 2px solid var(--border); border-radius: var(--radius-sm);
+    padding: 13px 16px; font-family: "Nunito", sans-serif; font-size: 15px;
+    outline: none; transition: border-color 0.2s; appearance: auto;
   }
   .field-input:focus { border-color: var(--red); background: #fff; }
 
-  /* Divider */
-  .divider-red {
-    border: none;
-    height: 2px;
-    background: var(--red);
+  .parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 }
