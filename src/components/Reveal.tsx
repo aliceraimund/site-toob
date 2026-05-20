@@ -23,7 +23,7 @@ export function Reveal({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, amount: 0, margin: "0px" }}
       variants={variants}
       transition={{ delay }}
     >
@@ -46,7 +46,7 @@ export function RevealStagger({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, amount: 0, margin: "0px" }}
       variants={{ hidden: {}, show: { transition: { staggerChildren: stagger } } }}
     >
       {children}
@@ -69,7 +69,7 @@ export function TextReveal({ children, className }: { children: ReactNode; class
         style={{ display: "inline-block" }}
         initial={{ y: "110%" }}
         whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, amount: 0, margin: "0px" }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
