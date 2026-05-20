@@ -35,11 +35,11 @@ function HomePage() {
           position: "relative",
         }}
       >
-        <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 160 }}>
+        <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 180 }}>
           <img
             src="/logos/Logo Toob para Fundo Preto.png"
             alt="Toob"
-            style={{ height: "clamp(56px, 8vw, 100px)", width: "auto", marginBottom: 32 }}
+            style={{ height: "clamp(80px, 14vw, 180px)", width: "auto", marginBottom: 36 }}
           />
 
           <div className="eyebrow" style={{ color: "#C0392B" }}>

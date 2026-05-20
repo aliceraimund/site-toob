@@ -6,7 +6,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: 96 }}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
