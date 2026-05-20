@@ -1,37 +1,55 @@
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-};
+const ease = [0.22, 1, 0.36, 1];
+const vp = { once: true, amount: 0, margin: "0px" } as const;
 
+/** Below-fold sections — fires when element enters viewport */
 export function Reveal({
   children,
   delay = 0,
   className,
-  as = "div",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof typeof motion;
 }) {
-  const Comp: any = (motion as any)[as];
   return (
-    <Comp
+    <motion.div
       className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0, margin: "0px" }}
-      variants={variants}
-      transition={{ delay }}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={vp}
+      transition={{ duration: 0.65, delay, ease }}
     >
       {children}
-    </Comp>
+    </motion.div>
   );
 }
 
+/** Hero / above-fold content — fires on mount, no scroll trigger */
+export function HeroReveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay, ease }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/** Stagger container */
 export function RevealStagger({
   children,
   className,
@@ -46,7 +64,7 @@ export function RevealStagger({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0, margin: "0px" }}
+      viewport={vp}
       variants={{ hidden: {}, show: { transition: { staggerChildren: stagger } } }}
     >
       {children}
@@ -56,24 +74,14 @@ export function RevealStagger({
 
 export function RevealItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <motion.div className={className} variants={variants}>
+    <motion.div
+      className={className}
+      variants={{
+        hidden: { opacity: 0, y: 32 },
+        show:   { opacity: 1, y: 0, transition: { duration: 0.65, ease } },
+      }}
+    >
       {children}
     </motion.div>
-  );
-}
-
-export function TextReveal({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <span className={className} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom" }}>
-      <motion.span
-        style={{ display: "inline-block" }}
-        initial={{ y: "110%" }}
-        whileInView={{ y: 0 }}
-        viewport={{ once: true, amount: 0, margin: "0px" }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </motion.span>
-    </span>
   );
 }

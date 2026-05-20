@@ -1,98 +1,123 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { X } from "lucide-react";
-import { Reveal, RevealStagger, RevealItem } from "../components/Reveal";
+import { X, ArrowRight, MessageCircle } from "lucide-react";
+import { HeroReveal, Reveal, RevealStagger, RevealItem } from "../components/Reveal";
 import { TiltCard } from "../components/TiltCard";
-import { HeroDark } from "./caminhoes";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/compra-venda")({
-  head: () => ({
-    meta: [
-      { title: "Compra e Venda de Equipamentos — Toob" },
-      {
-        name: "description",
-        content:
-          "Portfólio de caminhões roll-on, caçambas e empilhadeiras para compra. Ou venda seu ativo direto, sem intermediários.",
-      },
-    ],
-  }),
+  head: () => ({ meta: [{ title: "Compra e Venda de Equipamentos — Toob" }] }),
   component: CompraVendaPage,
 });
 
 const products = [
-  {
-    name: "Caminhão Roll-On Mercedes-Benz Atego 2430",
-    desc: "Caminhão roll-on trucado, motor 300cv, cabine simples, ano 2019. Excelente estado de conservação, pneus novos, documentação em dia.",
-  },
-  {
-    name: "Caminhão Roll-On Volkswagen Constellation 17.280",
-    desc: "Caminhão roll-on toco, motor 280cv, ano 2020, com sistema de gancho hidráulico revisado. Pronto para operação imediata.",
-  },
-  {
-    name: "Caçamba Roll-On 5m³ em Aço Carbono",
-    desc: "Caçamba roll-on capacidade 5m³, aço carbono de alta resistência. Ideal para resíduos industriais e entulho.",
-  },
-  {
-    name: "Caçamba Roll-On 7m³ Reforçada",
-    desc: "Capacidade 7m³, reforço estrutural nas laterais. Compatível com a maioria dos caminhões roll-on do mercado.",
-  },
-  {
-    name: "Empilhadeira Elétrica Toyota 8FBE15",
-    desc: "Capacidade 1.500kg, elevação 3m, bateria revisada, ano 2018.",
-  },
-  {
-    name: "Empilhadeira a GLP Hyster H2.5FT",
-    desc: "Capacidade 2.500kg, mástro triplex 4,5m, ano 2017.",
-  },
+  { id: 1, name: "Caminhão Roll-On Mercedes-Benz Atego 2430", desc: "Trucado, motor 300cv, cabine simples, ano 2019. Excelente estado de conservação, pneus novos, documentação em dia.", category: "Caminhão" },
+  { id: 2, name: "Caminhão Roll-On Volkswagen Constellation 17.280", desc: "Toco, motor 280cv, ano 2020, sistema de gancho hidráulico revisado. Pronto para operação imediata.", category: "Caminhão" },
+  { id: 3, name: "Caçamba Roll-On 5m³ em Aço Carbono", desc: "Capacidade de 5m³, aço carbono de alta resistência. Ideal para resíduos industriais e entulho.", category: "Caçamba" },
+  { id: 4, name: "Caçamba Roll-On 7m³ Reforçada", desc: "Capacidade de 7m³, reforço estrutural nas laterais. Compatível com a maioria dos caminhões roll-on.", category: "Caçamba" },
+  { id: 5, name: "Empilhadeira Elétrica Toyota 8FBE15", desc: "Capacidade 1.500kg, elevação 3m, bateria revisada, ano 2018.", category: "Empilhadeira" },
+  { id: 6, name: "Empilhadeira a GLP Hyster H2.5FT", desc: "Capacidade 2.500kg, mástro triplex 4,5m, ano 2017.", category: "Empilhadeira" },
 ];
 
-type ModalState =
-  | null
-  | { kind: "buy"; product: string }
-  | { kind: "sell" };
+type ModalState = { type: "buy" | "sell"; product: string } | null;
 
 function CompraVendaPage() {
   const [modal, setModal] = useState<ModalState>(null);
+  const [nome, setNome] = useState("");
+  const [empresa, setEmpresa] = useState("");
+  const [ativo, setAtivo] = useState("");
+
+  const openWhatsApp = () => {
+    if (!modal) return;
+    const msg = modal.type === "buy"
+      ? `Olá, Toob! Me chamo ${nome}, da empresa ${empresa}. Tenho interesse em comprar o equipamento ${modal.product}. Aguardo mais informações sobre disponibilidade e condições.`
+      : `Olá, Toob! Me chamo ${nome}, da empresa ${empresa}. Tenho um ativo que gostaria de vender. Equipamento: ${ativo}. Aguardo contato.`;
+    window.open(`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+    setModal(null);
+    setNome(""); setEmpresa(""); setAtivo("");
+  };
+
+  const inputStyle = {
+    width: "100%", border: "2px solid #e5e5e5", borderRadius: 10,
+    padding: "14px 18px", fontFamily: "Barlow, sans-serif", fontSize: 15,
+    outline: "none", background: "#fafafa", color: "#0D0D0D",
+  };
 
   return (
     <>
-      <HeroDark
-        eyebrow="Compra e Venda"
-        title="Compre ou venda equipamentos com quem conhece o mercado."
-        subtitle="Portfólio de equipamentos disponíveis para aquisição. Ou fale com a gente se quiser vender o seu ativo. Negociação direta, sem intermediários."
-      />
+      <section
+        className="relative flex min-h-[65vh] items-end overflow-hidden text-white"
+        style={{
+          backgroundImage: [
+            "linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.5) 40%, rgba(13,13,13,0.95) 100%)",
+            "url('https://images.unsplash.com/photo-1565793979229-94041c8e0c03?w=1920&q=80&auto=format')",
+          ].join(", "),
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container-x relative z-10 w-full pb-20 pt-36">
+          <HeroReveal>
+            <div className="eyebrow" style={{ color: "#C0392B" }}>Compra e Venda</div>
+          </HeroReveal>
+          <HeroReveal delay={0.1}>
+            <h1 className="font-display mt-5 max-w-4xl text-white" style={{ fontSize: "clamp(48px,6.5vw,80px)", lineHeight: 1.05 }}>
+              Compre ou venda equipamentos com quem conhece o mercado.
+            </h1>
+          </HeroReveal>
+          <HeroReveal delay={0.22}>
+            <p className="font-sans-body mt-6 max-w-2xl" style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.65 }}>
+              Portfólio de equipamentos disponíveis para aquisição. Ou fale com a gente se quiser vender o seu ativo.
+              Negociação direta, sem intermediários.
+            </p>
+          </HeroReveal>
+        </div>
+      </section>
 
-      <section className="bg-[#F5F5F5] py-24">
+      <section className="py-28" style={{ background: "#F5F5F5" }}>
         <div className="container-x">
-          <RevealStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Reveal><div className="eyebrow" style={{ color: "#C0392B" }}>Portfólio disponível</div></Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="font-display mt-3" style={{ fontSize: "clamp(40px,5.5vw,60px)", color: "#0D0D0D" }}>
+              Equipamentos para compra.
+            </h2>
+          </Reveal>
+
+          <RevealStagger className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
-              <RevealItem key={p.name}>
-                <TiltCard className="flex h-full flex-col bg-white" style={{ borderTop: "2px solid #C0392B" }}>
+              <RevealItem key={p.id}>
+                <TiltCard className="card-light flex h-full flex-col overflow-hidden">
                   <div
-                    className="flex aspect-[4/3] items-center justify-center bg-[#E5E5E5]"
-                    aria-hidden
+                    style={{
+                      height: 180,
+                      background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#5D5D5D" strokeWidth="1.2">
-                      <path d="M3 8l4-4h10l4 4v10H3z" />
-                      <path d="M3 14h18" />
-                    </svg>
+                    <span className="font-display" style={{ fontSize: 48, color: "rgba(255,255,255,0.1)" }}>
+                      {p.category === "Caminhão" ? "🚛" : p.category === "Empilhadeira" ? "🏭" : "📦"}
+                    </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-xl text-[#0D0D0D]">{p.name}</h3>
-                    <p className="mt-3 flex-1 font-sans-body text-[14px] text-[#5D5D5D]">{p.desc}</p>
-                    <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+                    <span className="badge-red" style={{ alignSelf: "flex-start", marginBottom: 10 }}>{p.category}</span>
+                    <h3 className="font-display" style={{ fontSize: 20, color: "#0D0D0D", lineHeight: 1.2 }}>{p.name}</h3>
+                    <p className="font-sans-body mt-3 flex-1" style={{ fontSize: 13, lineHeight: 1.65, color: "#5D5D5D" }}>{p.desc}</p>
+                    <div className="mt-5 flex flex-col gap-2 sm:flex-row">
                       <button
-                        onClick={() => setModal({ kind: "buy", product: p.name })}
-                        className="btn-primary flex-1 !px-4 !py-3 !text-[13px]"
+                        onClick={() => setModal({ type: "buy", product: p.name })}
+                        className="btn-primary flex-1"
+                        style={{ padding: "12px 16px", fontSize: 13, justifyContent: "center" }}
                       >
-                        Consultar para compra
+                        Consultar para Compra
                       </button>
                       <button
-                        onClick={() => setModal({ kind: "sell" })}
-                        className="flex-1 border-2 border-[#0D0D0D] bg-transparent px-4 py-3 font-display text-[13px] uppercase tracking-[0.1em] text-[#0D0D0D] transition hover:bg-[#0D0D0D] hover:text-white"
+                        onClick={() => setModal({ type: "sell", product: p.name })}
+                        className="btn-outline-dark flex-1"
+                        style={{ padding: "12px 16px", fontSize: 13, justifyContent: "center" }}
                       >
-                        Tenho interesse em vender
+                        Tenho para Vender
                       </button>
                     </div>
                   </div>
@@ -103,63 +128,52 @@ function CompraVendaPage() {
         </div>
       </section>
 
-      {modal && <MiniModal state={modal} onClose={() => setModal(null)} />}
-    </>
-  );
-}
-
-function MiniModal({ state, onClose }: { state: NonNullable<ModalState>; onClose: () => void }) {
-  const [v, setV] = useState<Record<string, string>>({});
-  const isBuy = state.kind === "buy";
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const msg = isBuy
-      ? `Olá, Toob! Me chamo ${v.nome}, da empresa ${v.empresa}. Tenho interesse em comprar o equipamento ${state.product}. Aguardo mais informações sobre disponibilidade e condições.`
-      : `Olá, Toob! Me chamo ${v.nome}, da empresa ${v.empresa}. Tenho um ativo que gostaria de vender. Equipamento: ${v.equipamento}. Aguardo contato.`;
-    window.open(`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
-    onClose();
-  };
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4" onClick={onClose}>
-      <form
-        onClick={(e) => e.stopPropagation()}
-        onSubmit={submit}
-        className="w-full max-w-md bg-white p-8"
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="eyebrow text-[#C0392B]">{isBuy ? "Comprar" : "Vender"}</div>
-            <h3 className="mt-2 font-display text-3xl text-[#0D0D0D]">
-              {isBuy ? state.product : "Venda seu equipamento"}
+      {/* Modal */}
+      {modal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)" }}
+          onClick={(e) => { if (e.target === e.currentTarget) setModal(null); }}
+        >
+          <div style={{ background: "#fff", borderRadius: 20, padding: 40, width: "100%", maxWidth: 480, position: "relative" }}>
+            <button
+              onClick={() => setModal(null)}
+              style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer" }}
+            >
+              <X size={22} color="#5D5D5D" />
+            </button>
+            <div className="eyebrow" style={{ color: "#C0392B" }}>
+              {modal.type === "buy" ? "Consultar para Compra" : "Vender meu equipamento"}
+            </div>
+            <h3 className="font-display mt-2" style={{ fontSize: 28, color: "#0D0D0D", lineHeight: 1.2 }}>
+              {modal.type === "buy" ? modal.product : "Descreva seu ativo"}
             </h3>
+            <div className="mt-6 flex flex-col gap-4">
+              <div>
+                <label className="input-label">Nome completo</label>
+                <input value={nome} onChange={(e) => setNome(e.target.value)} style={inputStyle} placeholder="Seu nome" />
+              </div>
+              <div>
+                <label className="input-label">Empresa</label>
+                <input value={empresa} onChange={(e) => setEmpresa(e.target.value)} style={inputStyle} placeholder="Nome da empresa" />
+              </div>
+              {modal.type === "sell" && (
+                <div>
+                  <label className="input-label">Equipamento que deseja vender</label>
+                  <input value={ativo} onChange={(e) => setAtivo(e.target.value)} style={inputStyle} placeholder="Descreva o equipamento" />
+                </div>
+              )}
+              <button
+                onClick={openWhatsApp}
+                className="btn-whatsapp w-full mt-2"
+              >
+                <MessageCircle size={18} />
+                Enviar pelo WhatsApp
+              </button>
+            </div>
           </div>
-          <button type="button" onClick={onClose} aria-label="Fechar"><X /></button>
         </div>
-        <div className="mt-6 space-y-4">
-          <Field label="Nome completo" value={v.nome} onChange={(x) => setV({ ...v, nome: x })} />
-          <Field label="Empresa" value={v.empresa} onChange={(x) => setV({ ...v, empresa: x })} />
-          {!isBuy && (
-            <Field label="Equipamento" value={v.equipamento ?? ""} onChange={(x) => setV({ ...v, equipamento: x })} />
-          )}
-        </div>
-        <button type="submit" className="btn-whatsapp mt-8 w-full">Enviar pelo WhatsApp</button>
-      </form>
-    </div>
-  );
-}
-
-function Field({ label, value, onChange }: { label: string; value?: string; onChange: (v: string) => void }) {
-  return (
-    <label className="flex flex-col gap-2">
-      <span className="font-sans-body text-xs font-semibold uppercase tracking-[0.15em] text-[#5D5D5D]">{label}</span>
-      <input
-        required
-        value={value ?? ""}
-        onChange={(e) => onChange(e.target.value)}
-        className="border border-[#0D0D0D]/15 bg-white px-4 py-3 font-sans-body text-[#0D0D0D] focus:border-[#C0392B] focus:outline-none"
-      />
-    </label>
+      )}
+    </>
   );
 }
