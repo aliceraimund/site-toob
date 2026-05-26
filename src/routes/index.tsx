@@ -33,7 +33,17 @@ function HomePage() {
             style={{ height: "clamp(80px, 14vw, 180px)", width: "auto", marginBottom: 36 }}
           />
 
-          <div className="eyebrow" style={{ color: "#FF0000" }}>
+          <div
+            className="eyebrow"
+            style={{
+              color: "#fff",
+              background: "rgba(255,0,0,0.85)",
+              display: "inline-block",
+              padding: "4px 14px",
+              borderRadius: 4,
+              letterSpacing: "0.16em",
+            }}
+          >
             Locação de caminhões e equipamentos roll-on
           </div>
 
