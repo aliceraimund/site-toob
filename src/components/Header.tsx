@@ -24,20 +24,20 @@ export function Header() {
           border: "1px solid rgba(255,255,255,0.10)",
           boxShadow: "0 4px 32px rgba(0,0,0,0.45)",
           width: "100%",
-          maxWidth: 1100,
+          maxWidth: 1360,
           transition: "box-shadow 0.3s ease",
         }}
       >
-        <div className="flex items-center justify-between px-6" style={{ height: 64 }}>
+        <div className="flex items-center justify-between px-10" style={{ height: 78 }}>
           <Link to="/" className="flex items-center" aria-label="Toob — Início" onClick={() => setMobile(false)}>
             <img
               src="/logos/Logo Toob para Fundo Preto.png"
               alt="Toob"
-              style={{ height: 36, width: "auto" }}
+              style={{ height: 44, width: "auto" }}
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-10 lg:flex">
             <NavLink to="/" label="Home" />
             <div
               className="relative"
@@ -45,7 +45,7 @@ export function Header() {
               onMouseLeave={() => setOpen(false)}
               onClick={() => setOpen((v) => !v)}
             >
-              <button className="group inline-flex items-center gap-1 font-sans-body font-medium text-white">
+              <button className="group inline-flex items-center gap-1.5 font-sans-body text-[16px] font-medium text-white">
                 <span className="relative">
                   Serviços
                   <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#FF0000] transition-all group-hover:w-full" />
@@ -86,7 +86,7 @@ export function Header() {
 
           <Link
             to="/contato"
-            className="hidden items-center gap-2 bg-[#FF0000] px-5 py-2.5 font-display text-sm uppercase tracking-[0.06em] text-white transition hover:bg-[#CC0000] rounded-full lg:inline-flex"
+            className="hidden items-center gap-2 bg-[#FF0000] px-7 py-3 font-display text-[15px] uppercase tracking-[0.06em] text-white transition hover:bg-[#CC0000] rounded-full lg:inline-flex"
           >
             Solicitar Orçamento <ArrowRight size={15} />
           </Link>
@@ -143,7 +143,7 @@ export function Header() {
 
 function NavLink({ to, label }: { to: any; label: string }) {
   return (
-    <Link to={to} className="group relative font-sans-body font-medium text-white">
+    <Link to={to} className="group relative font-sans-body text-[16px] font-medium text-white">
       <span className="relative">
         {label}
         <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#FF0000] transition-all group-hover:w-full" />
