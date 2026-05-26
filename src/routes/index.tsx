@@ -33,19 +33,19 @@ function HomePage() {
             style={{ height: "clamp(80px, 14vw, 180px)", width: "auto", marginBottom: 36 }}
           />
 
-          <div
-            className="eyebrow"
+          <p
             style={{
+              fontSize: "clamp(22px, 3vw, 36px)",
+              fontWeight: 700,
               color: "#fff",
-              background: "rgba(255,0,0,0.85)",
-              display: "inline-block",
-              padding: "4px 14px",
-              borderRadius: 4,
-              letterSpacing: "0.16em",
+              fontFamily: "Nunito, sans-serif",
+              marginBottom: 12,
+              lineHeight: 1.2,
+              textShadow: "0 2px 12px rgba(0,0,0,0.6)",
             }}
           >
-            Locação de caminhões e equipamentos roll-on
-          </div>
+            Locação de Caminhões e Equipamentos
+          </p>
 
           <h1
             className="font-display"
