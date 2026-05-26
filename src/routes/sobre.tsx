@@ -3,7 +3,6 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/sobre")({
-  head: () => ({ meta: [{ title: "Sobre Nós — Toob" }] }),
   component: SobrePage,
 });
 

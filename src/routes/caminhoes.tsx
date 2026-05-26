@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { WhatsAppForm } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/caminhoes")({
-  head: () => ({ meta: [{ title: "Locação de Caminhões — Toob" }] }),
   component: CaminhoesPage,
 });
 

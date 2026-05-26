@@ -3,7 +3,6 @@ import { Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { WhatsAppForm, WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/contato")({
-  head: () => ({ meta: [{ title: "Contato — Toob" }] }),
   component: ContatoPage,
 });
 

@@ -3,16 +3,6 @@ import { ArrowRight, ArrowDown, Check, MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Toob — Locação de Caminhões e Equipamentos Roll-On" },
-      {
-        name: "description",
-        content:
-          "Locação de caminhões roll-on e equipamentos com prazos diários, semanais ou mensais. Sem burocracia, sem contratos longos.",
-      },
-    ],
-  }),
   component: HomePage,
 });
 

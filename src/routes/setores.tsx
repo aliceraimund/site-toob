@@ -6,7 +6,6 @@ import {
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/setores")({
-  head: () => ({ meta: [{ title: "Setores Atendidos — Toob" }] }),
   component: SetoresPage,
 });
 

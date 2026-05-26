@@ -3,7 +3,6 @@ import { MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/compra-venda")({
-  head: () => ({ meta: [{ title: "Compra e Venda — Toob" }] }),
   component: CompraVendaPage,
 });
 

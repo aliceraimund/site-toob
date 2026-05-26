@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { WhatsAppForm } from "../components/WhatsAppForm";
 
 export const Route = createFileRoute("/equipamentos")({
-  head: () => ({ meta: [{ title: "Locação de Equipamentos — Toob" }] }),
   component: EquipamentosPage,
 });
 
