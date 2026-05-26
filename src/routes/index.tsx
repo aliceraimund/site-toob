@@ -16,11 +16,12 @@ function HomePage() {
           display: "flex",
           alignItems: "flex-end",
           backgroundImage: [
-            "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.4) 40%, rgba(13,13,13,0.92) 100%)",
-            "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80&auto=format')",
+            "linear-gradient(to right, rgba(5,5,5,0.68) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.02) 100%)",
+            "linear-gradient(to top, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.08) 40%)",
+            "url('/hero-truck.png')",
           ].join(", "),
           backgroundSize: "cover",
-          backgroundPosition: "center 40%",
+          backgroundPosition: "center center",
           color: "#fff",
           position: "relative",
         }}
