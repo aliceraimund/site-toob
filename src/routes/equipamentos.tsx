@@ -108,16 +108,15 @@ function EquipamentosPage() {
                 }}
               >
                 {/* Imagem em destaque */}
-                <div style={{ position: "relative", height: 300, overflow: "hidden", background: "#111" }}>
+                <div style={{ position: "relative", overflow: "hidden" }}>
                   <img
                     src={e.img}
                     alt={e.nome}
                     style={{
                       width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
+                      height: "auto",
+                      display: "block",
                       transition: "transform 0.4s ease",
-                      padding: "12px",
                     }}
                     onMouseEnter={(ev) => (ev.currentTarget.style.transform = "scale(1.04)")}
                     onMouseLeave={(ev) => (ev.currentTarget.style.transform = "scale(1)")}
