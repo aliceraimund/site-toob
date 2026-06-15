@@ -68,7 +68,17 @@ function CaminhoesPage() {
             }}
           >
             {/* Combustão */}
-            <div className="card" style={{ padding: 36 }}>
+            <div className="card" style={{ padding: 0, overflow: "hidden" }}>
+              <div style={{ background: "#111", overflow: "hidden" }}>
+                <img
+                  src="/caminhao-daf.png"
+                  alt="Caminhão Roll-On Diesel"
+                  style={{ width: "100%", height: "auto", display: "block", transition: "transform 0.4s ease" }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.transform = "scale(1.04)")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.transform = "scale(1)")}
+                />
+              </div>
+              <div style={{ padding: 36 }}>
               <div
                 style={{
                   display: "inline-block",
@@ -103,10 +113,21 @@ function CaminhoesPage() {
               <a href="#solicitar" className="btn-dark" style={{ marginTop: 32, display: "inline-flex" }}>
                 Solicitar <ArrowRight size={16} />
               </a>
+              </div>
             </div>
 
             {/* Gás */}
-            <div className="card" style={{ padding: 36, borderColor: "#FF0000", borderWidth: 2 }}>
+            <div className="card" style={{ padding: 0, overflow: "hidden", borderColor: "#FF0000", borderWidth: 2 }}>
+              <div style={{ background: "#111", overflow: "hidden" }}>
+                <img
+                  src="/caminhao-scania-gas.png"
+                  alt="Caminhão Roll-On a Gás"
+                  style={{ width: "100%", height: "auto", display: "block", transition: "transform 0.4s ease" }}
+                  onMouseEnter={(ev) => (ev.currentTarget.style.transform = "scale(1.04)")}
+                  onMouseLeave={(ev) => (ev.currentTarget.style.transform = "scale(1)")}
+                />
+              </div>
+              <div style={{ padding: 36 }}>
               <div
                 style={{
                   display: "inline-block",
@@ -141,6 +162,7 @@ function CaminhoesPage() {
               <a href="#solicitar" className="btn-primary" style={{ marginTop: 32, display: "inline-flex" }}>
                 Solicitar <ArrowRight size={16} />
               </a>
+              </div>
             </div>
           </div>
         </div>
