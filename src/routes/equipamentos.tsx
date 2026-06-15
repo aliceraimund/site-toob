@@ -7,10 +7,16 @@ export const Route = createFileRoute("/equipamentos")({
 
 const equipamentos = [
   {
-    nome: "Prensa de Resíduos",
-    desc: "Para compactação de materiais recicláveis e resíduos industriais. Aumenta a eficiência e reduz volume na sua operação.",
-    img: "/equipamento-prensa-cenario.png",
-    whats: "Olá! Tenho interesse em locar uma Prensa de Resíduos da Toob. Pode me passar mais informações?",
+    nome: "Caçamba Roll-On",
+    desc: "Integrada ao caminhão roll-on para coleta e transporte eficiente. Disponível em diferentes volumes.",
+    img: "/equipamento-rollon-cenario.png",
+    whats: "Olá! Tenho interesse em locar uma Caçamba Roll-On da Toob. Pode me passar mais informações?",
+  },
+  {
+    nome: "Caçamba Container",
+    desc: "Para armazenamento e coleta de resíduos sólidos em obras, indústrias e grandes centros de geração.",
+    img: "/equipamento-rollon-container-cenario.png",
+    whats: "Olá! Tenho interesse em locar uma Caçamba Container da Toob. Pode me passar mais informações?",
   },
   {
     nome: "Empilhadeira",
@@ -19,16 +25,10 @@ const equipamentos = [
     whats: "Olá! Tenho interesse em locar uma Empilhadeira da Toob. Pode me passar mais informações?",
   },
   {
-    nome: "Caçamba Estacionária",
-    desc: "Para armazenamento e coleta de resíduos sólidos em obras, indústrias e grandes centros de geração.",
-    img: "/equipamento-rollon-container-cenario.png",
-    whats: "Olá! Tenho interesse em locar uma Caçamba Estacionária da Toob. Pode me passar mais informações?",
-  },
-  {
-    nome: "Caçamba Roll-On",
-    desc: "Integrada ao caminhão roll-on para coleta e transporte eficiente. Disponível em diferentes volumes.",
-    img: "/equipamento-rollon-cenario.png",
-    whats: "Olá! Tenho interesse em locar uma Caçamba Roll-On da Toob. Pode me passar mais informações?",
+    nome: "Prensa de Resíduos",
+    desc: "Para compactação de materiais recicláveis e resíduos industriais. Aumenta a eficiência e reduz volume na sua operação.",
+    img: "/equipamento-prensa-cenario.png",
+    whats: "Olá! Tenho interesse em locar uma Prensa de Resíduos da Toob. Pode me passar mais informações?",
   },
 ];
 
@@ -91,7 +91,7 @@ function EquipamentosPage() {
             style={{
               marginTop: 48,
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(2, 1fr)",
               gap: 28,
             }}
           >
