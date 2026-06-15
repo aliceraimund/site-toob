@@ -19,6 +19,18 @@ const equipamentos = [
     whats: "Olá! Tenho interesse em locar uma Caçamba Container da Toob. Pode me passar mais informações?",
   },
   {
+    nome: "Julieta Roll-On",
+    desc: "Caçamba do tipo Julieta com sistema roll-on, ideal para coleta e transporte de resíduos volumosos. Abertura lateral facilita o carregamento em espaços com acesso restrito.",
+    img: "/equipamento-julieta-cenario.png",
+    whats: "Olá! Tenho interesse em locar uma Julieta Roll-On da Toob. Pode me passar mais informações?",
+  },
+  {
+    nome: "Carreta Sider",
+    desc: "Carreta com lonas laterais retráteis para carregamento e descarregamento rápido por qualquer dos lados. Ideal para cargas de grande volume com necessidade de agilidade operacional.",
+    img: "/equipamento-sider-cenario.png",
+    whats: "Olá! Tenho interesse em locar uma Carreta Sider da Toob. Pode me passar mais informações?",
+  },
+  {
     nome: "Empilhadeira",
     desc: "Movimentação interna de carga com segurança e agilidade. Ideal para armazéns, galpões e operações logísticas.",
     img: "/equipamento-empilhadeira-cenario.png",
