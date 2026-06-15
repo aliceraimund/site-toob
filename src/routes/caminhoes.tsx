@@ -111,7 +111,7 @@ function CaminhoesPage() {
                 ))}
               </ul>
               <a href="#solicitar" className="btn-dark" style={{ marginTop: 32, display: "inline-flex" }}>
-                Solicitar <ArrowRight size={16} />
+                Solicitar Orçamento <ArrowRight size={16} />
               </a>
               </div>
             </div>
@@ -155,12 +155,32 @@ function CaminhoesPage() {
               <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Nunito, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
                 {["Inventário de emissões mensal", "Dados prontos para relatórios ESG", "100% rastreado por telemetria"].map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ color: "#FF0000", fontWeight: 700 }}>—</span> {item}
+                    <span style={{ color: "#1a9e3f", fontWeight: 700 }}>—</span> {item}
                   </li>
                 ))}
               </ul>
-              <a href="#solicitar" className="btn-primary" style={{ marginTop: 32, display: "inline-flex", background: "#1a9e3f" }}>
-                Solicitar <ArrowRight size={16} />
+              <a
+                href="#solicitar"
+                style={{
+                  marginTop: 32,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  background: "#1a9e3f",
+                  color: "#fff",
+                  border: "2px solid #1a9e3f",
+                  borderRadius: 9999,
+                  padding: "14px 30px",
+                  fontFamily: "Nunito, sans-serif",
+                  fontSize: 14,
+                  fontWeight: 800,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Solicitar Orçamento <ArrowRight size={16} />
               </a>
               </div>
             </div>
