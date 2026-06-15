@@ -17,7 +17,7 @@ function CaminhoesPage() {
           alignItems: "flex-end",
           backgroundImage: [
             "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
-            "url('/caminhao-scania-gas.png')",
+            "url('/rodovia.png')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",
