@@ -15,38 +15,18 @@ function HomePage() {
           minHeight: "100vh",
           display: "flex",
           alignItems: "flex-end",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #141414 60%, #1a1a1a 100%)",
+          backgroundImage: [
+            "linear-gradient(to right, rgba(5,5,5,0.68) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.02) 100%)",
+            "linear-gradient(to top, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.08) 40%)",
+            "url('/hero-truck.png')",
+          ].join(", "),
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
           color: "#fff",
           position: "relative",
-          overflow: "hidden",
         }}
       >
-        {/* Caminhão — objeto de destaque à direita, fade à esquerda */}
-        <img
-          src="/hero-truck.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            right: 0,
-            top: 0,
-            height: "100%",
-            width: "68%",
-            objectFit: "cover",
-            objectPosition: "center",
-            filter: "saturate(0.55) brightness(0.9)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, black 45%)",
-            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, black 45%)",
-          }}
-        />
-        {/* Fade no rodapé para suavizar a base */}
-        <div style={{
-          position: "absolute", bottom: 0, left: 0, right: 0, height: "35%",
-          background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)",
-          zIndex: 1,
-        }} />
-
-        <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 180, position: "relative", zIndex: 2 }}>
+        <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 180 }}>
           <img
             src="/logos/Logo Toob para Fundo Preto.png"
             alt="Toob"
