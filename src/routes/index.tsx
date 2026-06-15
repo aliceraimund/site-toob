@@ -172,7 +172,7 @@ function HomePage() {
         style={{
           backgroundImage: [
             "linear-gradient(rgba(13,13,13,0.68), rgba(13,13,13,0.68))",
-            "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&auto=format')",
+            "url('/cenario.png')",
           ].join(", "),
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
@@ -268,21 +268,21 @@ function HomePage() {
                 sub: "Roll-on — combustão e gás",
                 body: "Frota para operações industriais, logísticas e de resíduos. Prazos flexíveis e atendimento ágil.",
                 to: "/caminhoes",
-                img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=70&auto=format",
+                img: "/caminhao-scania-gas.png",
               },
               {
                 title: "Locação de Equipamentos",
                 sub: "Prensas, empilhadeiras, caçambas e mais",
                 body: "Linha completa de equipamentos para apoiar cada etapa da sua operação.",
                 to: "/equipamentos",
-                img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=70&auto=format",
+                img: "/equipamento-rollon-container-cenario.png",
               },
               {
                 title: "Compra e Venda",
                 sub: "Ativos e equipamentos",
                 body: "Portfólio de equipamentos para aquisição, ou venda seu ativo com quem conhece o mercado.",
                 to: "/compra-venda",
-                img: "https://images.unsplash.com/photo-1565793979229-94041c8e0c03?w=800&q=70&auto=format",
+                img: "/caminhao-daf.png",
               },
             ].map((s) => (
               <div key={s.title} className="card-dark">

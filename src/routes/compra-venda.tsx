@@ -50,7 +50,7 @@ function CompraVendaPage() {
           alignItems: "flex-end",
           backgroundImage: [
             "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
-            "url('https://images.unsplash.com/photo-1565793979229-94041c8e0c03?w=1920&q=80&auto=format')",
+            "url('/caminhao-daf.png')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",

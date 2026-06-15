@@ -17,7 +17,7 @@ function SobrePage() {
           alignItems: "flex-end",
           backgroundImage: [
             "linear-gradient(to bottom, rgba(13,13,13,0.5) 0%, rgba(13,13,13,0.9) 100%)",
-            "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&auto=format')",
+            "url('/cenario.png')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",

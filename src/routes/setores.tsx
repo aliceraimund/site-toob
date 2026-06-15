@@ -68,7 +68,7 @@ function SetoresPage() {
           alignItems: "flex-end",
           backgroundImage: [
             "linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.92) 100%)",
-            "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80&auto=format')",
+            "url('/cenario.png')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -167,7 +167,7 @@ function SetoresPage() {
         style={{
           backgroundImage: [
             "linear-gradient(rgba(13,13,13,0.72), rgba(13,13,13,0.72))",
-            "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80&auto=format')",
+            "url('/caminhao-scania.png')",
           ].join(", "),
           padding: "120px 0",
           color: "#fff",
