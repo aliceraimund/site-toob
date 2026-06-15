@@ -117,7 +117,7 @@ function CaminhoesPage() {
             </div>
 
             {/* Gás */}
-            <div className="card" style={{ padding: 0, overflow: "hidden", borderColor: "#FF0000", borderWidth: 2 }}>
+            <div className="card" style={{ padding: 0, overflow: "hidden", borderColor: "#1a9e3f", borderWidth: 2 }}>
               <div style={{ background: "#111", overflow: "hidden" }}>
                 <img
                   src="/caminhao-scania-gas.png"
@@ -131,7 +131,7 @@ function CaminhoesPage() {
               <div
                 style={{
                   display: "inline-block",
-                  background: "#FF0000",
+                  background: "#1a9e3f",
                   color: "#fff",
                   fontFamily: "Nunito, sans-serif",
                   fontSize: 11,
@@ -159,7 +159,7 @@ function CaminhoesPage() {
                   </li>
                 ))}
               </ul>
-              <a href="#solicitar" className="btn-primary" style={{ marginTop: 32, display: "inline-flex" }}>
+              <a href="#solicitar" className="btn-primary" style={{ marginTop: 32, display: "inline-flex", background: "#1a9e3f" }}>
                 Solicitar <ArrowRight size={16} />
               </a>
               </div>
