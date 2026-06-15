@@ -8,10 +8,8 @@ export function Footer() {
           <img
             src="/logos/Logo Toob para Fundo Preto.png"
             alt="Toob"
-            width={128}
-            height={32}
             loading="lazy"
-            style={{ height: 32, width: "auto" }}
+            style={{ height: 72, width: "auto" }}
           />
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans-body text-sm text-white/80">

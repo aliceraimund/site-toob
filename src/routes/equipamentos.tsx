@@ -220,7 +220,7 @@ function EquipamentosPage() {
               fontFamily: "Nunito, sans-serif",
             }}
           >
-            Todos os equipamentos disponíveis em contratos diários, semanais ou mensais.
+            Todos os equipamentos disponíveis em contratos diários, semanais ou mensais.<br />
             Sem mínimo obrigatório, sem multa por devolução antecipada.
           </p>
 
