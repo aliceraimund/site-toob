@@ -56,7 +56,7 @@ function CaminhoesPage() {
             className="font-display"
             style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
           >
-            Duas opções para a sua necessidade.
+            Opções para a sua necessidade.
           </h2>
 
           <div
