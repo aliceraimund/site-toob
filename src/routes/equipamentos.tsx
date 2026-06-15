@@ -70,8 +70,8 @@ function EquipamentosPage() {
               fontFamily: "Nunito, sans-serif",
             }}
           >
-            Prensas, empilhadeiras, caçambas e mais. Locação com contrato flexível
-            e atendimento direto.
+            Prensas, empilhadeiras, caçambas e mais.<br />
+            Locação com contrato flexível e atendimento direto.
           </p>
         </div>
       </section>
