@@ -217,7 +217,7 @@ function SobrePage() {
               {[
                 { value: "99,7%", label: "redução em emissões de CO₂" },
                 { value: "100%", label: "dos veículos rastreados" },
-                { value: "Mensal", label: "inventário de emissões" },
+                { value: "Inventário mensal", label: "de emissões de CO₂" },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -225,11 +225,12 @@ function SobrePage() {
                     background: "#fff",
                     border: "1px solid #E5E5E5",
                     borderLeft: "4px solid #FF0000",
-                    borderRadius: 8,
+                    borderRadius: 20,
                     padding: "24px 28px",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
                   }}
                 >
-                  <div className="font-display" style={{ fontSize: 44, color: "#FF0000", lineHeight: 1 }}>
+                  <div className="font-display" style={{ fontSize: 40, color: "#FF0000", lineHeight: 1 }}>
                     {s.value}
                   </div>
                   <div
