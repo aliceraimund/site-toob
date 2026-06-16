@@ -10,41 +10,30 @@ function useScrollReveal() {
   useEffect(() => {
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>("main > section")
-    ).slice(1); // pula o hero
+    ).slice(1);
 
-    // 1) esconde todas as seções (exceto hero)
+    // A animação CSS começa pausada no keyframe inicial (invisível).
+    // Não precisamos de timing — o estado oculto é garantido pelo CSS.
     sections.forEach((el) => {
       el.classList.remove("reveal-visible");
       el.classList.add("reveal");
     });
 
-    let observer: IntersectionObserver | null = null;
-    let raf2 = 0;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
+    );
 
-    // 2) dois frames de animação garantem que o browser pintou
-    //    o estado oculto antes de começar a observar
-    const raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(() => {
-        observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("reveal-visible");
-                observer?.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
-        );
-        sections.forEach((el) => observer!.observe(el));
-      });
-    });
+    sections.forEach((el) => observer.observe(el));
 
-    return () => {
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-      observer?.disconnect();
-    };
+    return () => observer.disconnect();
   }, [location.pathname]);
 }
 

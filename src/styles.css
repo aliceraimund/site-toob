@@ -183,10 +183,7 @@
     background-position: center;
   }
 
-  /* ── STACKING CARDS SCROLL REVEAL ── */
-
-  /* Todas as seções exceto a primeira têm bordas arredondadas no topo
-     e se sobrepõem levemente à seção acima */
+  /* ── STACKING CARDS ── */
   main > section:not(:first-child) {
     border-radius: 28px 28px 0 0;
     margin-top: -28px;
@@ -195,15 +192,25 @@
     box-shadow: 0 -6px 40px rgba(0, 0, 0, 0.18);
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(72px) scale(0.98);
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  /* ── SCROLL REVEAL via animation pausada ──
+     A animação começa no keyframe inicial (invisível) e fica pausada.
+     JS só adiciona .reveal-visible para dar play. Sem dependência de timing. */
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(72px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
-  .reveal-visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+
+  .reveal {
+    animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both paused;
+  }
+
+  .reveal.reveal-visible {
+    animation-play-state: running;
   }
 }
