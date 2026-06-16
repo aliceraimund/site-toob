@@ -19,7 +19,7 @@ export function Footer() {
           <Link to="/contato" className="hover:text-[#FF0000]">Contato</Link>
         </nav>
         <div className="text-right text-xs text-white/60 md:text-right">
-          <div>CNPJ: a preencher</div>
+          <div>CNPJ: 62.121.063/0001-53</div>
           <div>© 2025 Toob · São Paulo, SP · Brasil</div>
         </div>
       </div>
