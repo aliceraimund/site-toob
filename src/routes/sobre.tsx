@@ -20,7 +20,7 @@ function SobrePage() {
             "url('/sobre-nos.png')",
           ].join(", "),
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center bottom",
           color: "#fff",
         }}
       >
