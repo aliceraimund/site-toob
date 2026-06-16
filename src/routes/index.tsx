@@ -189,12 +189,9 @@ function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: 0,
-              borderRadius: 20,
-              overflow: "hidden",
-              border: "1px solid rgba(255,0,0,0.35)",
-              boxShadow: "0 0 60px rgba(255,0,0,0.25), 0 0 120px rgba(255,0,0,0.12)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: 1,
+              background: "rgba(255,255,255,0.06)",
             }}
           >
             {[
@@ -202,13 +199,14 @@ function HomePage() {
               { value: "48h", label: "Proposta entregue em até" },
               { value: "99,7%", label: "Redução de CO₂ na frota a gás" },
               { value: "100%", label: "Dos veículos rastreados" },
-            ].map((s, i) => (
+            ].map((s) => (
               <div
                 key={s.label}
                 style={{
-                  padding: "40px 32px",
-                  background: i % 2 === 0 ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)",
-                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                  padding: "48px 32px",
+                  background: "rgba(13,13,13,0.55)",
+                  backdropFilter: "blur(12px)",
+                  borderTop: "2px solid #FF0000",
                   textAlign: "center",
                 }}
               >
@@ -220,13 +218,13 @@ function HomePage() {
                 </div>
                 <div
                   style={{
-                    marginTop: 10,
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.55)",
+                    marginTop: 12,
+                    fontSize: 12,
+                    color: "rgba(255,255,255,0.5)",
                     fontFamily: "Nunito, sans-serif",
-                    fontWeight: 600,
+                    fontWeight: 700,
                     textTransform: "uppercase",
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.12em",
                   }}
                 >
                   {s.label}
