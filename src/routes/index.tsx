@@ -16,9 +16,8 @@ function HomePage() {
           display: "flex",
           alignItems: "flex-end",
           backgroundImage: [
-            "linear-gradient(to right, rgba(5,5,5,0.68) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.02) 100%)",
-            "linear-gradient(to top, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.08) 40%)",
-            "url('/hero-truck.png')",
+            "linear-gradient(to right, rgba(5,5,5,0.82) 0%, rgba(5,5,5,0.70) 25%, rgba(5,5,5,0.38) 55%, rgba(5,5,5,0.0) 80%)",
+            "url('/hero-truck-v3.png')",
           ].join(", "),
           backgroundSize: "cover",
           backgroundPosition: "center center",
