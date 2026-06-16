@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 
-export const WHATS_NUMBER = "5511984253022";
+export const WHATS_NUMBER = "5511985502120";
 
 export type FieldDef =
   | { name: string; label: string; type: "text" | "date" }
