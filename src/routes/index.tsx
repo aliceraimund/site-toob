@@ -390,7 +390,7 @@ function HomePage() {
               <div key={s.n}>
                 <div
                   className="font-display"
-                  style={{ fontSize: 80, color: "#EBEBEB", lineHeight: 1 }}
+                  style={{ fontSize: 80, color: "#FF0000", lineHeight: 1, opacity: 0.18 }}
                 >
                   {s.n}
                 </div>
