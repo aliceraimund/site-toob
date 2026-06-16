@@ -65,11 +65,14 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--red);
-    background: rgba(255, 0, 0, 0.12);
-    border: 1px solid rgba(255, 0, 0, 0.35);
+    color: #FF6060;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 0, 0, 0.55);
     border-radius: 9999px;
     padding: 5px 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
   }
   .font-display { font-family: "Nunito", sans-serif; font-weight: 800; }
   .font-body    { font-family: "Nunito", sans-serif; }
