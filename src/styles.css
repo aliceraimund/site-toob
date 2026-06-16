@@ -59,12 +59,17 @@
   }
 
   .eyebrow {
+    display: inline-block;
     font-family: "Nunito", sans-serif;
-    font-weight: 700;
-    font-size: 11px;
+    font-weight: 800;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     color: var(--red);
+    background: rgba(255, 0, 0, 0.12);
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    border-radius: 9999px;
+    padding: 5px 16px;
   }
   .font-display { font-family: "Nunito", sans-serif; font-weight: 800; }
   .font-body    { font-family: "Nunito", sans-serif; }
