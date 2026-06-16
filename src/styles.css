@@ -67,10 +67,6 @@
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--red);
-    background: rgba(255, 0, 0, 0.08);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    border-radius: 9999px;
-    padding: 5px 16px;
   }
 
   /* Eyebrow para fundos ESCUROS (hero com imagem, seção preta) */
