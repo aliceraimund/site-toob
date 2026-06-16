@@ -182,7 +182,7 @@ function SobrePage() {
             }}
           >
             <div>
-              <div className="eyebrow">Compromisso Ambiental</div>
+              <div className="eyebrow" style={{ color: "#16A34A" }}>Compromisso Ambiental</div>
               <h2
                 className="font-display"
                 style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
@@ -211,13 +211,13 @@ function SobrePage() {
                   style={{
                     background: "#fff",
                     border: "1px solid #E5E5E5",
-                    borderLeft: "4px solid #FF0000",
+                    borderLeft: "4px solid #16A34A",
                     borderRadius: 20,
                     padding: "24px 28px",
                     boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
                   }}
                 >
-                  <div className="font-display" style={{ fontSize: 40, color: "#FF0000", lineHeight: 1 }}>
+                  <div className="font-display" style={{ fontSize: 40, color: "#16A34A", lineHeight: 1 }}>
                     {s.value}
                   </div>
                   <div
