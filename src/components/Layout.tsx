@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useLocation } from "@tanstack/react-router";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -7,33 +7,36 @@ import { Footer } from "./Footer";
 function useScrollReveal() {
   const location = useLocation();
 
-  useEffect(() => {
-    // pequeno delay para o DOM da nova página renderizar
-    const timer = setTimeout(() => {
-      const sections = document.querySelectorAll<HTMLElement>("main > *:not(:first-child), main section:not(:first-child)");
+  useLayoutEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("main > section")
+    );
 
-      sections.forEach((el) => {
-        el.classList.add("reveal");
-      });
+    // primeira seção (hero) aparece imediatamente
+    sections.forEach((el, i) => {
+      if (i === 0) return;
+      el.classList.remove("reveal-visible");
+      el.classList.add("reveal");
+    });
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("reveal-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
+    );
 
-      sections.forEach((el) => observer.observe(el));
+    sections.forEach((el, i) => {
+      if (i === 0) return;
+      observer.observe(el);
+    });
 
-      return () => observer.disconnect();
-    }, 60);
-
-    return () => clearTimeout(timer);
+    return () => observer.disconnect();
   }, [location.pathname]);
 }
 

@@ -183,15 +183,27 @@
     background-position: center;
   }
 
-  /* ── SCROLL REVEAL ── */
+  /* ── STACKING CARDS SCROLL REVEAL ── */
+
+  /* Todas as seções exceto a primeira têm bordas arredondadas no topo
+     e se sobrepõem levemente à seção acima */
+  main > section:not(:first-child) {
+    border-radius: 28px 28px 0 0;
+    margin-top: -28px;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 -6px 40px rgba(0, 0, 0, 0.18);
+  }
+
   .reveal {
     opacity: 0;
-    transform: translateY(48px);
-    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(72px) scale(0.98);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
