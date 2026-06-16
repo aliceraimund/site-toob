@@ -1,12 +1,12 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Nunito", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --font-sans: "Nunito", system-ui, sans-serif;
 }
 
@@ -44,7 +44,7 @@
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
-    font-family: "Nunito", system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 800;
     line-height: 1.1;
   }
@@ -86,7 +86,7 @@
     -webkit-backdrop-filter: blur(10px);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
   }
-  .font-display { font-family: "Nunito", sans-serif; font-weight: 800; }
+  .font-display { font-family: "Inter", sans-serif; font-weight: 800; }
   .font-body    { font-family: "Nunito", sans-serif; }
 
   .btn-primary {
