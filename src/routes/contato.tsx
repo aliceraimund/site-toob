@@ -18,7 +18,7 @@ function ContatoPage() {
         }}
       >
         <div className="container-x">
-          <div className="eyebrow" style={{ color: "#FF0000" }}>Fale com a Toob</div>
+          <div className="eyebrow-dark">Fale com a Toob</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}

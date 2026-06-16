@@ -76,7 +76,7 @@ function SetoresPage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 160 }}>
-          <div className="eyebrow" style={{ color: "#FF0000" }}>Setores Atendidos</div>
+          <div className="eyebrow-dark">Setores Atendidos</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 72px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
@@ -174,7 +174,7 @@ function SetoresPage() {
         }}
       >
         <div className="container-x" style={{ textAlign: "center" }}>
-          <div className="eyebrow" style={{ color: "#FF0000" }}>Não encontrou seu setor?</div>
+          <div className="eyebrow-dark">Não encontrou seu setor?</div>
           <h2
             className="font-display"
             style={{ fontSize: "clamp(36px, 5.5vw, 56px)", marginTop: 12, color: "#fff", maxWidth: 700, margin: "12px auto 0" }}

@@ -58,7 +58,7 @@ function CompraVendaPage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 72, paddingTop: 140 }}>
-          <div className="eyebrow" style={{ color: "#FF0000" }}>Compra e Venda</div>
+          <div className="eyebrow-dark">Compra e Venda</div>
           <h1
             className="font-display"
             style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}

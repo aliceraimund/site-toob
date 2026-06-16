@@ -235,7 +235,7 @@ function HomePage() {
       {/* ── SERVIÇOS ── */}
       <section id="servicos" style={{ background: "#0D0D0D", padding: "96px 0" }}>
         <div className="container-x">
-          <div className="eyebrow">O que oferecemos</div>
+          <div className="eyebrow-dark">O que oferecemos</div>
           <h2
             className="font-display"
             style={{ fontSize: "clamp(40px, 5.5vw, 60px)", marginTop: 12, color: "#fff" }}

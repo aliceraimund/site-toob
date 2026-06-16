@@ -58,7 +58,23 @@
     padding-inline: clamp(20px, 5vw, 80px);
   }
 
+  /* Eyebrow para fundos CLAROS (branco, cinza) */
   .eyebrow {
+    display: inline-block;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--red);
+    background: rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 9999px;
+    padding: 5px 16px;
+  }
+
+  /* Eyebrow para fundos ESCUROS (hero com imagem, seção preta) */
+  .eyebrow-dark {
     display: inline-block;
     font-family: "Nunito", sans-serif;
     font-weight: 800;
