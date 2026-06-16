@@ -172,7 +172,17 @@ function SobrePage() {
       </section>
 
       {/* ── SUSTENTABILIDADE ── */}
-      <section style={{ background: "#fff", padding: "96px 0" }}>
+      <section
+        style={{
+          backgroundImage: [
+            "linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88))",
+            "url('/natureza.png')",
+          ].join(", "),
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "96px 0",
+        }}
+      >
         <div className="container-x">
           <div className="eyebrow">Compromisso Ambiental</div>
           <h2
