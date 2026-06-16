@@ -27,21 +27,25 @@ function HomePage() {
         }}
       >
         <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 180 }}>
-          <img
-            src="/logos/Logo Toob para Fundo Preto.png"
-            alt="Toob"
-            style={{ height: "clamp(80px, 14vw, 180px)", width: "auto", marginBottom: 36 }}
-          />
+          {/* Logo recortada via clip para eliminar espaço em branco ao redor */}
+          <div style={{ marginBottom: 20, marginLeft: -8 }}>
+            <img
+              src="/logos/Logo Toob para Fundo Preto.png"
+              alt="Toob"
+              style={{ height: "clamp(56px, 9vw, 110px)", width: "auto", display: "block" }}
+            />
+          </div>
 
+          {/* item 2: destaque uppercase estilo eyebrow grande */}
           <p
             style={{
-              fontSize: "clamp(22px, 3vw, 36px)",
-              fontWeight: 700,
-              color: "#fff",
+              fontSize: "clamp(11px, 1.1vw, 14px)",
+              fontWeight: 800,
+              color: "rgba(255,255,255,0.75)",
               fontFamily: "Nunito, sans-serif",
-              marginBottom: 12,
-              lineHeight: 1.2,
-              textShadow: "0 2px 12px rgba(0,0,0,0.6)",
+              textTransform: "uppercase",
+              letterSpacing: "0.22em",
+              marginBottom: 16,
             }}
           >
             Locação de Caminhões e Equipamentos
@@ -189,7 +193,8 @@ function HomePage() {
               gap: 0,
               borderRadius: 20,
               overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.1)",
+              border: "1px solid rgba(255,0,0,0.35)",
+              boxShadow: "0 0 60px rgba(255,0,0,0.25), 0 0 120px rgba(255,0,0,0.12)",
             }}
           >
             {[
@@ -203,13 +208,13 @@ function HomePage() {
                 style={{
                   padding: "40px 32px",
                   background: i % 2 === 0 ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)",
-                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.1)" : "none",
+                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
                   textAlign: "center",
                 }}
               >
                 <div
                   className="font-display"
-                  style={{ fontSize: "clamp(40px, 5vw, 64px)", color: "#FF0000", lineHeight: 1 }}
+                  style={{ fontSize: "clamp(40px, 5vw, 64px)", color: "#fff", lineHeight: 1 }}
                 >
                   {s.value}
                 </div>
@@ -217,7 +222,7 @@ function HomePage() {
                   style={{
                     marginTop: 10,
                     fontSize: 13,
-                    color: "rgba(255,255,255,0.6)",
+                    color: "rgba(255,255,255,0.55)",
                     fontFamily: "Nunito, sans-serif",
                     fontWeight: 600,
                     textTransform: "uppercase",
@@ -282,15 +287,20 @@ function HomePage() {
                 sub: "Ativos e equipamentos",
                 body: "Portfólio de equipamentos para aquisição, ou venda seu ativo com quem conhece o mercado.",
                 to: "/compra-venda",
-                img: "/caminhao-daf.png",
+                img: "/galpao-industrial.png",
               },
             ].map((s) => (
-              <div key={s.title} className="card-dark">
+              <Link
+                key={s.title}
+                to={s.to as any}
+                className="card-dark"
+                style={{ display: "block", textDecoration: "none", cursor: "pointer" }}
+              >
                 <div style={{ height: 200, overflow: "hidden" }}>
                   <img
                     src={s.img}
                     alt={s.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s ease" }}
                   />
                 </div>
                 <div style={{ padding: 28 }}>
@@ -321,8 +331,7 @@ function HomePage() {
                   >
                     {s.body}
                   </p>
-                  <Link
-                    to={s.to as any}
+                  <div
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -336,9 +345,9 @@ function HomePage() {
                     }}
                   >
                     Saiba mais <ArrowRight size={15} />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -411,8 +420,31 @@ function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#FF0000", padding: "96px 0" }}>
-        <div className="container-x" style={{ textAlign: "center" }}>
+      <section
+        style={{
+          background: "#0D0D0D",
+          padding: "96px 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* glow decorativo vermelho */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 600,
+            height: 300,
+            background: "radial-gradient(ellipse, rgba(255,0,0,0.18) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div className="container-x" style={{ textAlign: "center", position: "relative" }}>
+          <div className="eyebrow-dark" style={{ marginBottom: 24 }}>Vamos começar?</div>
           <h2
             className="font-display"
             style={{ fontSize: "clamp(40px, 6vw, 64px)", color: "#fff", maxWidth: 800, margin: "0 auto" }}
@@ -423,8 +455,10 @@ function HomePage() {
             style={{
               marginTop: 20,
               fontSize: 18,
-              color: "rgba(255,255,255,0.8)",
+              color: "rgba(255,255,255,0.55)",
               fontFamily: "Nunito, sans-serif",
+              maxWidth: 480,
+              margin: "20px auto 0",
             }}
           >
             Fale com a Toob agora. Sem enrolação, sem contrato longo obrigatório.
@@ -434,25 +468,13 @@ function HomePage() {
               href={`https://wa.me/${WHATS_NUMBER}`}
               target="_blank"
               rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                background: "#fff",
-                color: "#0D0D0D",
-                fontFamily: "Nunito, sans-serif",
-                fontSize: 17,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                padding: "16px 36px",
-                borderRadius: 8,
-                textDecoration: "none",
-              }}
+              className="btn-whatsapp"
+              style={{ width: "auto", paddingInline: 36 }}
             >
               <MessageCircle size={19} />
               Falar pelo WhatsApp
             </a>
-            <Link to="/contato" className="btn-ghost">
+            <Link to="/contato" className="btn-primary">
               Solicitar Orçamento <ArrowRight size={17} />
             </Link>
           </div>
