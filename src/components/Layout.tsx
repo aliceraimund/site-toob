@@ -18,26 +18,31 @@ function useScrollReveal() {
       el.classList.add("reveal");
     });
 
-    let observer: IntersectionObserver;
+    let observer: IntersectionObserver | null = null;
+    let raf2 = 0;
 
-    // 2) espera o browser pintar o estado oculto antes de observar
-    const tid = setTimeout(() => {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("reveal-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
-      );
-      sections.forEach((el) => observer.observe(el));
-    }, 0);
+    // 2) dois frames de animação garantem que o browser pintou
+    //    o estado oculto antes de começar a observar
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal-visible");
+                observer?.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
+        );
+        sections.forEach((el) => observer!.observe(el));
+      });
+    });
 
     return () => {
-      clearTimeout(tid);
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
       observer?.disconnect();
     };
   }, [location.pathname]);
