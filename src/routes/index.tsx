@@ -236,12 +236,12 @@ function HomePage() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section id="servicos" style={{ background: "#0D0D0D", padding: "96px 0" }}>
+      <section id="servicos" style={{ background: "#fff", padding: "96px 0" }}>
         <div className="container-x">
-          <div className="eyebrow-dark">O que oferecemos</div>
+          <div className="eyebrow">O que oferecemos</div>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 5.5vw, 60px)", marginTop: 12, color: "#fff" }}
+            style={{ fontSize: "clamp(40px, 5.5vw, 60px)", marginTop: 12, color: "#0D0D0D" }}
           >
             Soluções para cada etapa da sua operação.
           </h2>
@@ -249,7 +249,7 @@ function HomePage() {
             style={{
               marginTop: 16,
               fontSize: 17,
-              color: "rgba(255,255,255,0.55)",
+              color: "#5D5D5D",
               maxWidth: 560,
               fontFamily: "Nunito, sans-serif",
             }}
@@ -291,7 +291,7 @@ function HomePage() {
               <Link
                 key={s.title}
                 to={s.to as any}
-                className="card-dark"
+                className="card"
                 style={{ display: "block", textDecoration: "none", cursor: "pointer" }}
               >
                 <div style={{ height: 200, overflow: "hidden" }}>
@@ -315,7 +315,7 @@ function HomePage() {
                   >
                     {s.sub}
                   </div>
-                  <h3 className="font-display" style={{ fontSize: 28, color: "#fff" }}>
+                  <h3 className="font-display" style={{ fontSize: 28, color: "#0D0D0D" }}>
                     {s.title}
                   </h3>
                   <p
@@ -323,7 +323,7 @@ function HomePage() {
                       marginTop: 12,
                       fontSize: 15,
                       lineHeight: 1.7,
-                      color: "rgba(255,255,255,0.6)",
+                      color: "#5D5D5D",
                       fontFamily: "Nunito, sans-serif",
                     }}
                   >
@@ -418,34 +418,12 @@ function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section
-        style={{
-          background: "#0D0D0D",
-          padding: "96px 0",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* glow decorativo vermelho */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 600,
-            height: 300,
-            background: "radial-gradient(ellipse, rgba(255,0,0,0.18) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div className="container-x" style={{ textAlign: "center", position: "relative" }}>
-          <div className="eyebrow-dark" style={{ marginBottom: 24 }}>Vamos começar?</div>
+      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
+        <div className="container-x" style={{ textAlign: "center" }}>
+          <div className="eyebrow" style={{ marginBottom: 24 }}>Vamos começar?</div>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 6vw, 64px)", color: "#fff", maxWidth: 800, margin: "0 auto" }}
+            style={{ fontSize: "clamp(40px, 6vw, 64px)", color: "#0D0D0D", maxWidth: 800, margin: "0 auto" }}
           >
             Pronto para destravar sua operação?
           </h2>
@@ -453,7 +431,7 @@ function HomePage() {
             style={{
               marginTop: 20,
               fontSize: 18,
-              color: "rgba(255,255,255,0.55)",
+              color: "#5D5D5D",
               fontFamily: "Nunito, sans-serif",
               maxWidth: 480,
               margin: "20px auto 0",

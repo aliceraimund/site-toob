@@ -12,16 +12,16 @@ function ContatoPage() {
       {/* ── HERO ── */}
       <section
         style={{
-          background: "#0D0D0D",
+          background: "#fff",
           padding: "120px 0 80px",
-          color: "#fff",
+          borderBottom: "1px solid #E5E5E5",
         }}
       >
         <div className="container-x">
-          <div className="eyebrow-dark">Fale com a Toob</div>
+          <div className="eyebrow">Fale com a Toob</div>
           <h1
             className="font-display"
-            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#fff", maxWidth: 800 }}
+            style={{ fontSize: "clamp(44px, 6.5vw, 76px)", marginTop: 16, color: "#0D0D0D", maxWidth: 800 }}
           >
             Proposta em horas. Atendimento direto.
           </h1>
@@ -30,7 +30,7 @@ function ContatoPage() {
               marginTop: 20,
               fontSize: 17,
               lineHeight: 1.65,
-              color: "rgba(255,255,255,0.65)",
+              color: "#5D5D5D",
               maxWidth: 500,
               fontFamily: "Nunito, sans-serif",
             }}

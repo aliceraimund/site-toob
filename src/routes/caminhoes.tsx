@@ -189,10 +189,10 @@ function CaminhoesPage() {
       </section>
 
       {/* ── PRAZOS ── */}
-      <section style={{ background: "#0D0D0D", padding: "80px 0" }}>
+      <section style={{ background: "#F5F5F5", padding: "80px 0" }}>
         <div className="container-x">
           <div className="eyebrow">Modalidades de locação</div>
-          <h2 className="font-display" style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#fff" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}>
             Você escolhe o prazo.
           </h2>
 
@@ -202,9 +202,9 @@ function CaminhoesPage() {
               { prazo: "Semanal", desc: "Flexibilidade para projetos de curto prazo sem comprometimento longo." },
               { prazo: "Mensal", desc: "Estabilidade operacional com a liberdade de ajustar quando necessário." },
             ].map((p) => (
-              <div key={p.prazo} className="card-dark" style={{ padding: 28, borderTop: "3px solid #FF0000" }}>
-                <h3 className="font-display" style={{ fontSize: 32, color: "#fff" }}>{p.prazo}</h3>
-                <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.55)", fontFamily: "Nunito, sans-serif" }}>
+              <div key={p.prazo} className="card" style={{ padding: 28, borderTop: "3px solid #FF0000" }}>
+                <h3 className="font-display" style={{ fontSize: 32, color: "#0D0D0D" }}>{p.prazo}</h3>
+                <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.7, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
                   {p.desc}
                 </p>
               </div>

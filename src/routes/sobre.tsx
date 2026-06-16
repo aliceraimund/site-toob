@@ -97,19 +97,20 @@ function SobrePage() {
 
             <div
               style={{
-                background: "#0D0D0D",
+                background: "#F5F5F5",
                 borderRadius: 16,
                 padding: 48,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 aspectRatio: "1",
+                border: "1px solid #E5E5E5",
               }}
             >
               <img
-                src="/logos/Símbolo Toob.png"
+                src="/logos/Logo Toob Padrão FT.png"
                 alt="Símbolo Toob"
-                style={{ width: "60%", height: "auto" }}
+                style={{ width: "70%", height: "auto" }}
               />
             </div>
           </div>
@@ -117,12 +118,12 @@ function SobrePage() {
       </section>
 
       {/* ── VALORES ── */}
-      <section style={{ background: "#0D0D0D", padding: "96px 0" }}>
+      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
         <div className="container-x">
           <div className="eyebrow">Como trabalhamos</div>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#fff" }}
+            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
           >
             Três princípios que guiam tudo.
           </h2>
@@ -149,17 +150,8 @@ function SobrePage() {
                 body: "Equipamento disponível, entrega no prazo combinado. Sem promessa vazia.",
               },
             ].map((v) => (
-              <div key={v.title} className="card-dark" style={{ padding: 32 }}>
-                <div
-                  style={{
-                    width: 32,
-                    height: 3,
-                    background: "#FF0000",
-                    borderRadius: 2,
-                    marginBottom: 20,
-                  }}
-                />
-                <h3 className="font-display" style={{ fontSize: 28, color: "#fff" }}>
+              <div key={v.title} className="card" style={{ padding: 32, borderLeft: "4px solid #FF0000" }}>
+                <h3 className="font-display" style={{ fontSize: 28, color: "#0D0D0D" }}>
                   {v.title}
                 </h3>
                 <p
@@ -167,7 +159,7 @@ function SobrePage() {
                     marginTop: 12,
                     fontSize: 15,
                     lineHeight: 1.75,
-                    color: "rgba(255,255,255,0.6)",
+                    color: "#5D5D5D",
                     fontFamily: "Nunito, sans-serif",
                   }}
                 >
@@ -249,11 +241,12 @@ function SobrePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#FF0000", padding: "96px 0" }}>
+      <section style={{ background: "#fff", padding: "96px 0" }}>
         <div className="container-x" style={{ textAlign: "center" }}>
+          <div className="eyebrow" style={{ marginBottom: 20 }}>Fale com a gente</div>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 6vw, 60px)", color: "#fff", maxWidth: 700, margin: "0 auto" }}
+            style={{ fontSize: "clamp(36px, 6vw, 60px)", color: "#0D0D0D", maxWidth: 700, margin: "0 auto" }}
           >
             Quer saber mais sobre como a Toob pode ajudar sua operação?
           </h2>
@@ -262,25 +255,13 @@ function SobrePage() {
               href={`https://wa.me/${WHATS_NUMBER}`}
               target="_blank"
               rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                background: "#fff",
-                color: "#0D0D0D",
-                fontFamily: "Nunito, sans-serif",
-                fontSize: 17,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                padding: "16px 36px",
-                borderRadius: 8,
-                textDecoration: "none",
-              }}
+              className="btn-whatsapp"
+              style={{ width: "auto", paddingInline: 36 }}
             >
               <MessageCircle size={19} />
               Falar pelo WhatsApp
             </a>
-            <Link to="/contato" className="btn-ghost">
+            <Link to="/contato" className="btn-primary">
               Solicitar Orçamento <ArrowRight size={17} />
             </Link>
           </div>
