@@ -14,6 +14,7 @@ export function WhatsAppForm({
   buildMessage,
   initialValues,
   dark = false,
+  sectionBg: sectionBgOverride,
 }: {
   id?: string;
   title: string;
@@ -21,6 +22,7 @@ export function WhatsAppForm({
   buildMessage: (v: Record<string, string>) => string;
   initialValues?: Record<string, string>;
   dark?: boolean;
+  sectionBg?: string;
 }) {
   const [values, setValues] = useState<Record<string, string>>(initialValues ?? {});
 
@@ -32,7 +34,7 @@ export function WhatsAppForm({
     );
   };
 
-  const sectionBg  = dark ? "#0D0D0D" : "#F5F5F5";
+  const sectionBg  = sectionBgOverride ?? (dark ? "#0D0D0D" : "#F5F5F5");
   const cardBg     = dark ? "#161616" : "#FFFFFF";
   const cardBorder = dark ? "rgba(255,255,255,0.08)" : "#E5E5E5";
   const textMain   = dark ? "#FFFFFF" : "#0D0D0D";

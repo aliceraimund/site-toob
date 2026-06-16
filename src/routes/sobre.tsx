@@ -172,7 +172,7 @@ function SobrePage() {
       </section>
 
       {/* ── SUSTENTABILIDADE ── */}
-      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
+      <section style={{ background: "#fff", padding: "96px 0" }}>
         <div className="container-x">
           <div className="eyebrow">Compromisso Ambiental</div>
           <h2
@@ -241,7 +241,7 @@ function SobrePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#fff", padding: "96px 0" }}>
+      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
         <div className="container-x" style={{ textAlign: "center" }}>
           <div className="eyebrow" style={{ marginBottom: 20 }}>Fale com a gente</div>
           <h2

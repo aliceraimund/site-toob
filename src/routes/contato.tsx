@@ -166,7 +166,8 @@ function ContatoPage() {
       <WhatsAppForm
         id="formulario"
         title="Solicite seu orçamento"
-        dark={true}
+        dark={false}
+        sectionBg="#fff"
         fields={[
           { name: "nome", label: "Seu nome", type: "text" },
           { name: "empresa", label: "Empresa", type: "text" },

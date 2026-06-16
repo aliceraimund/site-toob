@@ -352,7 +352,7 @@ function HomePage() {
       </section>
 
       {/* ── COMO FUNCIONA ── */}
-      <section style={{ background: "#fff", padding: "96px 0" }}>
+      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
         <div className="container-x">
           <div className="eyebrow">Como funciona</div>
           <h2
@@ -418,7 +418,7 @@ function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#F5F5F5", padding: "96px 0" }}>
+      <section style={{ background: "#fff", padding: "96px 0" }}>
         <div className="container-x" style={{ textAlign: "center" }}>
           <div className="eyebrow" style={{ marginBottom: 24 }}>Vamos começar?</div>
           <h2

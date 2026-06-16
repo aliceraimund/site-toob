@@ -218,6 +218,7 @@ function CaminhoesPage() {
         id="solicitar"
         title="Solicite sua locação de caminhão"
         dark={false}
+        sectionBg="#fff"
         fields={[
           { name: "nome", label: "Seu nome", type: "text" },
           { name: "empresa", label: "Empresa", type: "text" },
