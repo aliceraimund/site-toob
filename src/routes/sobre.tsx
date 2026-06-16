@@ -175,7 +175,7 @@ function SobrePage() {
       <section
         style={{
           backgroundImage: [
-            "linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88))",
+            "linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72))",
             "url('/natureza.png')",
           ].join(", "),
           backgroundSize: "cover",
