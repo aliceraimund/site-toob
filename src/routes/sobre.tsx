@@ -90,7 +90,7 @@ function SobrePage() {
               >
                 Enquanto o mercado exige contratos longos e burocracia, a Toob resolve em horas.
                 Nossos clientes são indústrias, construtoras, empresas de reciclagem, operadores
-                logísticos — qualquer operação que precise de equipamento agora, sem abrir mão
+                logísticos, qualquer operação que precise de equipamento agora, sem abrir mão
                 da qualidade e da confiabilidade.
               </p>
             </div>
@@ -201,12 +201,12 @@ function SobrePage() {
           >
             <div>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
-                A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos — são a mesma decisão.
+                A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos: são a mesma decisão.
                 Nossa frota inclui caminhões a gás com redução comprovada de 15% a 99,7% nas emissões de CO₂,
                 com base na metodologia GHG Protocol.
               </p>
               <p style={{ marginTop: 16, fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
-                Cada veículo é 100% rastreado por telemetria e emite inventário de emissões mensalmente —
+                Cada veículo é 100% rastreado por telemetria e emite inventário de emissões mensalmente,
                 dados que seus relatórios de sustentabilidade e exigências ESG podem usar diretamente.
               </p>
             </div>

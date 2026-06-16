@@ -76,7 +76,7 @@ function CompraVendaPage() {
             }}
           >
             Portfólio de ativos disponíveis para compra. Ou avalie sua frota e equipamentos
-            conosco — compramos com avaliação técnica em 48 horas.
+            conosco: compramos com avaliação técnica em 48 horas.
           </p>
         </div>
       </section>
@@ -163,54 +163,54 @@ function CompraVendaPage() {
       </section>
 
       {/* ── CTA VENDER ── */}
-      <section style={{ background: "#0D0D0D", padding: "80px 0" }}>
-        <div className="container-x" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "center" }}>
-          <div>
-            <div className="eyebrow">Quer vender seus ativos?</div>
-            <h2
-              className="font-display"
-              style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#fff" }}
-            >
-              Avaliamos sua frota em 48 horas.
-            </h2>
-            <p
-              style={{
-                marginTop: 16,
-                fontSize: 16,
-                lineHeight: 1.75,
-                color: "rgba(255,255,255,0.6)",
-                fontFamily: "Nunito, sans-serif",
-              }}
-            >
-              Mande os dados do que você quer vender — caminhões, equipamentos, caçambas.
-              Nossa equipe faz a avaliação técnica e retorna com uma proposta clara em até 48 horas.
-              Sem enrolação.
-            </p>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <a
-              href={`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de uma avaliação para venda de equipamentos/frota.")}`}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 10,
-                background: "#25D366",
-                color: "#fff",
-                fontFamily: "Nunito, sans-serif",
-                fontSize: 17,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                padding: "16px 32px",
-                borderRadius: 8,
-                textDecoration: "none",
-              }}
-            >
-              <MessageCircle size={19} />
-              Enviar para avaliação
-            </a>
+      <section style={{ background: "#F0F0F0", padding: "96px 0" }}>
+        <div className="container-x">
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 24,
+              padding: "clamp(40px, 6vw, 72px)",
+              boxShadow: "0 4px 40px rgba(0,0,0,0.07)",
+              display: "grid",
+              gridTemplateColumns: "1fr auto",
+              gap: "48px 64px",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div className="eyebrow">Quer vender seus ativos?</div>
+              <h2
+                className="font-display"
+                style={{ fontSize: "clamp(32px, 4.5vw, 52px)", marginTop: 16, color: "#0D0D0D", maxWidth: 520 }}
+              >
+                Avaliamos sua frota em 48 horas.
+              </h2>
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: 16,
+                  lineHeight: 1.75,
+                  color: "#5D5D5D",
+                  fontFamily: "Nunito, sans-serif",
+                  maxWidth: 480,
+                }}
+              >
+                Mande os dados do que você quer vender: caminhões, equipamentos, caçambas.
+                Nossa equipe faz a avaliação técnica e retorna com uma proposta clara em até 48 horas.
+                Sem enrolação.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, minWidth: 260 }}>
+              <a
+                href={`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de uma avaliação para venda de equipamentos/frota.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-whatsapp"
+              >
+                <MessageCircle size={19} />
+                Enviar para avaliação
+              </a>
+            </div>
           </div>
         </div>
       </section>

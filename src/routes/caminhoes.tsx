@@ -106,7 +106,7 @@ function CaminhoesPage() {
               <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Nunito, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
                 {["Alta disponibilidade de frota", "Contratos diários, semanais ou mensais", "Rastreamento incluso"].map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ color: "#FF0000", fontWeight: 700 }}>—</span> {item}
+                    <span style={{ color: "#FF0000", fontWeight: 700 }}>›</span> {item}
                   </li>
                 ))}
               </ul>
@@ -143,7 +143,7 @@ function CaminhoesPage() {
                   marginBottom: 20,
                 }}
               >
-                Gás Natural — Sustentável
+                Gás Natural · Sustentável
               </div>
               <h3 className="font-display" style={{ fontSize: 32, color: "#0D0D0D" }}>
                 Caminhão Roll-On a Gás
@@ -155,7 +155,7 @@ function CaminhoesPage() {
               <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Nunito, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
                 {["Inventário de emissões mensal", "Dados prontos para relatórios ESG", "100% rastreado por telemetria"].map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ color: "#1a9e3f", fontWeight: 700 }}>—</span> {item}
+                    <span style={{ color: "#1a9e3f", fontWeight: 700 }}>›</span> {item}
                   </li>
                 ))}
               </ul>

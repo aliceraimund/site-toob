@@ -123,7 +123,7 @@ function ContatoPage() {
                 {
                   icon: <MapPin size={18} color="#FF0000" />,
                   label: "Localização",
-                  value: "São Paulo, SP — Brasil",
+                  value: "São Paulo, SP, Brasil",
                 },
                 {
                   icon: <Clock size={18} color="#FF0000" />,

@@ -128,7 +128,7 @@ function HomePage() {
             {[
               {
                 title: "Prazos que fazem sentido",
-                body: "Diário, semanal, mensal — você define o tempo que precisa. Sem mínimo de 12 meses, sem multa por curto prazo.",
+                body: "Diário, semanal, mensal: você define o tempo que precisa. Sem mínimo de 12 meses, sem multa por curto prazo.",
               },
               {
                 title: "Processo simples",
@@ -268,7 +268,7 @@ function HomePage() {
             {[
               {
                 title: "Locação de Caminhões",
-                sub: "Roll-on — combustão e gás",
+                sub: "Roll-on · combustão e gás",
                 body: "Frota para operações industriais, logísticas e de resíduos. Prazos flexíveis e atendimento ágil.",
                 to: "/caminhoes",
                 img: "/caminhao-scania-gas.png",

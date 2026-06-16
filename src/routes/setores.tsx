@@ -94,7 +94,7 @@ function SetoresPage() {
             }}
           >
             Atendemos operações em qualquer setor que precise de caminhões, caçambas
-            ou equipamentos — com agilidade e sem burocracia.
+            ou equipamentos, com agilidade e sem burocracia.
           </p>
         </div>
       </section>
