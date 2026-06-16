@@ -95,22 +95,11 @@ function SobrePage() {
               </p>
             </div>
 
-            <div
-              style={{
-                background: "#F5F5F5",
-                borderRadius: 16,
-                padding: 48,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                aspectRatio: "1",
-                border: "1px solid #E5E5E5",
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img
                 src="/logos/Logo Toob Padrão FT.png"
                 alt="Símbolo Toob"
-                style={{ width: "70%", height: "auto" }}
+                style={{ width: "100%", maxWidth: 420, height: "auto" }}
               />
             </div>
           </div>
@@ -198,7 +187,7 @@ function SobrePage() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               gap: 48,
-              alignItems: "start",
+              alignItems: "center",
             }}
           >
             <div>
