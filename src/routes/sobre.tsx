@@ -173,17 +173,8 @@ function SobrePage() {
         }}
       >
         <div className="container-x">
-          <div className="eyebrow">Compromisso Ambiental</div>
-          <h2
-            className="font-display"
-            style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D", maxWidth: 640 }}
-          >
-            Sua operação mais eficiente. E mais verde.
-          </h2>
-
           <div
             style={{
-              marginTop: 40,
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               gap: 48,
@@ -191,7 +182,14 @@ function SobrePage() {
             }}
           >
             <div>
-              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
+              <div className="eyebrow">Compromisso Ambiental</div>
+              <h2
+                className="font-display"
+                style={{ fontSize: "clamp(36px, 5vw, 52px)", marginTop: 12, color: "#0D0D0D" }}
+              >
+                Sua operação mais eficiente. E mais verde.
+              </h2>
+              <p style={{ marginTop: 24, fontSize: 16, lineHeight: 1.85, color: "#5D5D5D", fontFamily: "Nunito, sans-serif" }}>
                 A Toob acredita que eficiência operacional e responsabilidade ambiental não são opostos: são a mesma decisão.
                 Nossa frota inclui caminhões a gás com redução comprovada de 15% a 99,7% nas emissões de CO₂,
                 com base na metodologia GHG Protocol.
