@@ -10,7 +10,7 @@ function ContatoPage() {
   return (
     <>
       {/* ── HERO TWO-COLUMN ── */}
-      <section style={{ background: "#fff", padding: "120px 0 96px" }}>
+      <section style={{ background: "#fff", padding: "160px 0 96px" }}>
         <div className="container-x">
           <div
             style={{
