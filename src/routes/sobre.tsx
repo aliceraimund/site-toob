@@ -43,7 +43,7 @@ function SobrePage() {
             }}
           >
             Nascemos para resolver o que o mercado ignorava: a necessidade de locação rápida,
-            sem burocracia e sem contrato longo.
+            sem burocracia e com prazos que se adaptam ao seu negócio.
           </p>
         </div>
       </section>
@@ -128,7 +128,7 @@ function SobrePage() {
             {[
               {
                 title: "Flexibilidade real",
-                body: "Diário, semanal, mensal. O prazo é seu. Sem mínimo imposto, sem multa por curto prazo. Sua operação manda.",
+                body: "Do diário ao anual. O prazo é seu. Contratos curtos ou longos, sem mínimo imposto. Sua operação manda.",
               },
               {
                 title: "Agilidade no processo",

@@ -42,7 +42,7 @@ function CaminhoesPage() {
               fontFamily: "Nunito, sans-serif",
             }}
           >
-            Caminhões roll-on à combustão e a gás, com prazos diários, semanais ou mensais.
+            Caminhões roll-on à combustão e a gás, com prazos do diário ao anual.
             Disponibilidade ágil e atendimento direto.
           </p>
         </div>
@@ -104,7 +104,7 @@ function CaminhoesPage() {
                 Ideal para quem precisa de volume e disponibilidade imediata.
               </p>
               <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, fontFamily: "Nunito, sans-serif", fontSize: 15, color: "#5D5D5D" }}>
-                {["Alta disponibilidade de frota", "Contratos diários, semanais ou mensais", "Rastreamento incluso"].map((item) => (
+                {["Alta disponibilidade de frota", "Contratos do diário ao anual", "Rastreamento incluso"].map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <span style={{ color: "#FF0000", fontWeight: 700 }}>›</span> {item}
                   </li>
@@ -201,6 +201,7 @@ function CaminhoesPage() {
               { prazo: "Diário", desc: "Para demandas pontuais ou operações que variam dia a dia." },
               { prazo: "Semanal", desc: "Flexibilidade para projetos de curto prazo sem comprometimento longo." },
               { prazo: "Mensal", desc: "Estabilidade operacional com a liberdade de ajustar quando necessário." },
+              { prazo: "Anual", desc: "Previsibilidade e economia para operações contínuas de longo prazo." },
             ].map((p) => (
               <div key={p.prazo} className="card" style={{ padding: 28, borderTop: "3px solid #FF0000" }}>
                 <h3 className="font-display" style={{ fontSize: 32, color: "#0D0D0D" }}>{p.prazo}</h3>
@@ -223,7 +224,7 @@ function CaminhoesPage() {
           { name: "nome", label: "Seu nome", type: "text" },
           { name: "empresa", label: "Empresa", type: "text" },
           { name: "tipo", label: "Tipo de caminhão", type: "select", options: ["Diesel (combustão)", "Gás natural"] },
-          { name: "prazo", label: "Prazo desejado", type: "select", options: ["Diário", "Semanal", "Mensal"] },
+          { name: "prazo", label: "Prazo desejado", type: "select", options: ["Diário", "Semanal", "Mensal", "Anual"] },
           { name: "inicio", label: "Data de início", type: "date" },
         ]}
         buildMessage={(v) =>

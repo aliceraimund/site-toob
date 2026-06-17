@@ -67,8 +67,8 @@ function HomePage() {
               fontFamily: "Nunito, sans-serif",
             }}
           >
-            Diário, semanal ou mensal. Você escolhe o prazo que faz sentido para o
-            seu negócio. Sem burocracia, sem contrato longo obrigatório.
+            Diário, semanal, mensal ou anual. Você escolhe o prazo que faz sentido
+            para o seu negócio. Sem burocracia, sem prazo mínimo obrigatório.
           </p>
 
           <div style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: 12 }}>
@@ -82,7 +82,7 @@ function HomePage() {
 
           <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
             {[
-              "Contratos diários, semanais ou mensais",
+              "Contratos do diário ao anual",
               "Proposta em horas",
               "Atendimento direto",
             ].map((t) => (
@@ -127,7 +127,7 @@ function HomePage() {
             {[
               {
                 title: "Prazos que fazem sentido",
-                body: "Diário, semanal, mensal: você define o tempo que precisa. Sem mínimo de 12 meses, sem multa por curto prazo.",
+                body: "Do diário ao anual: você define o tempo que precisa. Contratos curtos ou longos, sem multa por antecipação.",
               },
               {
                 title: "Processo simples",
@@ -436,7 +436,7 @@ function HomePage() {
               margin: "20px auto 0",
             }}
           >
-            Fale com a Toob agora. Sem enrolação, sem contrato longo obrigatório.
+            Fale com a Toob agora. Contratos curtos ou longos, sem enrolação.
           </p>
           <div style={{ marginTop: 40, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
             <a

@@ -232,8 +232,8 @@ function EquipamentosPage() {
               fontFamily: "Nunito, sans-serif",
             }}
           >
-            Todos os equipamentos disponíveis em contratos diários, semanais ou mensais.<br />
-            Sem mínimo obrigatório, sem multa por devolução antecipada.
+            Todos os equipamentos disponíveis em contratos do diário ao anual.<br />
+            Sem prazo mínimo obrigatório, sem multa por devolução antecipada.
           </p>
 
           <div
@@ -244,7 +244,7 @@ function EquipamentosPage() {
               gap: 16,
             }}
           >
-            {["Diário", "Semanal", "Mensal"].map((p) => (
+            {["Diário", "Semanal", "Mensal", "Anual"].map((p) => (
               <div
                 key={p}
                 style={{
