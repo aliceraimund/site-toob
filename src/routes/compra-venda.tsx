@@ -172,8 +172,8 @@ function CompraVendaPage() {
               padding: "clamp(40px, 6vw, 72px)",
               boxShadow: "0 4px 40px rgba(0,0,0,0.07)",
               display: "grid",
-              gridTemplateColumns: "1fr auto",
-              gap: "48px 64px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "40px 64px",
               alignItems: "center",
             }}
           >
@@ -200,7 +200,7 @@ function CompraVendaPage() {
                 Sem enrolação.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, minWidth: 260 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <a
                 href={`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de uma avaliação para venda de equipamentos/frota.")}`}
                 target="_blank"

@@ -10,12 +10,12 @@ function ContatoPage() {
   return (
     <>
       {/* ── HERO TWO-COLUMN ── */}
-      <section style={{ background: "#fff", padding: "160px 0 96px" }}>
+      <section style={{ background: "#fff", padding: "clamp(100px, 14vw, 160px) 0 96px" }}>
         <div className="container-x">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               gap: 48,
               alignItems: "start",
             }}

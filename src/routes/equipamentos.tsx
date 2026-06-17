@@ -103,7 +103,7 @@ function EquipamentosPage() {
             style={{
               marginTop: 48,
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
               gap: 28,
             }}
           >
