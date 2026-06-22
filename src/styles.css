@@ -219,4 +219,21 @@
   .reveal.reveal-visible {
     animation-play-state: running;
   }
+
+  /* Hero home: imagem é landscape (16:9), em telas portrait o cover corta
+     uma faixa estreita centralizada e perde o caminhão. Desloca o foco
+     para a direita/baixo conforme a tela fica mais estreita e alta. */
+  .hero-home {
+    background-position: center center;
+  }
+  @media (max-width: 900px) {
+    .hero-home {
+      background-position: 78% 65%;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-home {
+      background-position: 82% 70%;
+    }
+  }
 }

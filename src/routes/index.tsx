@@ -11,6 +11,7 @@ function HomePage() {
     <>
       {/* ── HERO ── */}
       <section
+        className="hero-home"
         style={{
           minHeight: "100vh",
           display: "flex",
@@ -21,7 +22,6 @@ function HomePage() {
             "url('/hero-truck-v3.png')",
           ].join(", "),
           backgroundSize: "cover",
-          backgroundPosition: "center center",
           color: "#fff",
           position: "relative",
         }}
