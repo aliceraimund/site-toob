@@ -220,20 +220,22 @@
     animation-play-state: running;
   }
 
-  /* Hero home: imagem é landscape (16:9), em telas portrait o cover corta
-     uma faixa estreita centralizada e perde o caminhão. Desloca o foco
-     para a direita/baixo conforme a tela fica mais estreita e alta. */
+  /* Hero home: imagem desktop é landscape; em telas estreitas usamos um
+     recorte vertical dedicado (mesma cena, enquadrada para portrait). */
   .hero-home {
+    background-image:
+      linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.75) 30%, rgba(5,5,5,0.35) 60%, rgba(5,5,5,0.0) 85%),
+      linear-gradient(to top, rgba(5,5,5,0.80) 0%, rgba(5,5,5,0.30) 35%, rgba(5,5,5,0.0) 60%),
+      url('/hero-truck-v3.png');
+    background-size: cover;
     background-position: center center;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     .hero-home {
-      background-position: 78% 65%;
-    }
-  }
-  @media (max-width: 480px) {
-    .hero-home {
-      background-position: 82% 70%;
+      background-image:
+        linear-gradient(to top, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.05) 70%),
+        url('/hero-truck-mobile.png');
+      background-position: center center;
     }
   }
 }
