@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/equipamentos")({
   component: EquipamentosPage,
@@ -49,6 +50,11 @@ const WHATS_BASE = `https://wa.me/${WHATS_NUMBER}?text=`;
 function EquipamentosPage() {
   return (
     <>
+      <Seo
+        title="Locação de Equipamentos — Prensas, Empilhadeiras e Caçambas | Toob"
+        description="Prensas, empilhadeiras, caçambas e mais. Locação de equipamentos com contrato flexível, do diário ao anual, e atendimento direto."
+        path="/equipamentos"
+      />
       {/* ── HERO ── */}
       <section
         style={{

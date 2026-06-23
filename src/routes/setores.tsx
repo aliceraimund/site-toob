@@ -4,6 +4,7 @@ import {
   FlaskConical, Building2, Warehouse, ArrowRight, MessageCircle,
 } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/setores")({
   component: SetoresPage,
@@ -60,6 +61,11 @@ const setores = [
 function SetoresPage() {
   return (
     <>
+      <Seo
+        title="Setores Atendidos — Indústrias, Construtoras e Logística | Toob"
+        description="Atendemos operações em qualquer setor que precise de caminhões, caçambas ou equipamentos, com agilidade e sem burocracia."
+        path="/setores"
+      />
       {/* ── HERO ── */}
       <section
         style={{

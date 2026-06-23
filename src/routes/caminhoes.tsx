@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { WhatsAppForm } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/caminhoes")({
   component: CaminhoesPage,
@@ -9,6 +10,11 @@ export const Route = createFileRoute("/caminhoes")({
 function CaminhoesPage() {
   return (
     <>
+      <Seo
+        title="Locação de Caminhões Roll-On — Toob Soluções"
+        description="Caminhões roll-on à combustão e a gás, com prazos do diário ao anual. Disponibilidade ágil e atendimento direto com a Toob Soluções."
+        path="/caminhoes"
+      />
       {/* ── HERO ── */}
       <section
         style={{

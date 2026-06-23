@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Clock, MessageCircle, Check } from "lucide-react";
 import { WhatsAppForm, WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/contato")({
   component: ContatoPage,
@@ -9,6 +10,11 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   return (
     <>
+      <Seo
+        title="Contato — Toob Soluções"
+        description="Fale com a Toob Soluções. Proposta em horas, atendimento direto com quem decide, sem intermediários e sem formulário perdido."
+        path="/contato"
+      />
       {/* ── HERO TWO-COLUMN ── */}
       <section style={{ background: "#fff", padding: "clamp(100px, 14vw, 160px) 0 96px" }}>
         <div className="container-x">

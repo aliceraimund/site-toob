@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/compra-venda")({
   component: CompraVendaPage,
@@ -42,6 +43,11 @@ const portfolio = [
 function CompraVendaPage() {
   return (
     <>
+      <Seo
+        title="Compra e Venda de Caminhões e Equipamentos — Toob Soluções"
+        description="Portfólio de equipamentos para aquisição, ou venda seu ativo com quem conhece o mercado. Avaliação de frota em até 48 horas."
+        path="/compra-venda"
+      />
       {/* ── HERO ── */}
       <section
         style={{

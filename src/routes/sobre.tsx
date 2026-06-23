@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/sobre")({
   component: SobrePage,
@@ -9,6 +10,11 @@ export const Route = createFileRoute("/sobre")({
 function SobrePage() {
   return (
     <>
+      <Seo
+        title="Sobre Nós — Toob Soluções"
+        description="A Toob Soluções nasceu para resolver o que o mercado tradicional ignorava: locação rápida e flexível, sem burocracia e sem contrato longo obrigatório."
+        path="/sobre"
+      />
       {/* ── HERO ── */}
       <section
         style={{

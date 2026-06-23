@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown, Check, MessageCircle } from "lucide-react";
 import { WHATS_NUMBER } from "../components/WhatsAppForm";
+import { Seo } from "../components/Seo";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -9,6 +10,11 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
+      <Seo
+        title="Toob Soluções — Locação de Caminhões e Equipamentos Roll-On"
+        description="Locação de caminhões roll-on e equipamentos com prazos do diário ao anual. Proposta em horas, sem burocracia, atendimento direto."
+        path="/"
+      />
       {/* ── HERO ── */}
       <section
         className="hero-home"

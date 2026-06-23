@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://toobsolucoes.com.br/sitemap.xml
