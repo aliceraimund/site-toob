@@ -26,7 +26,7 @@ function HomePage() {
         }}
       >
         <div className="container-x hero-inner" style={{ width: "100%" }}>
-          <div className="hero-top">
+          <div className="hero-text">
             {/* Logo recortada via clip para eliminar espaço em branco ao redor */}
             <div className="hero-logo-wrap" style={{ marginBottom: 20, marginLeft: -8 }}>
               <img
@@ -73,38 +73,40 @@ function HomePage() {
               Diário, semanal, mensal ou anual. Você escolhe o prazo que faz sentido
               para o seu negócio. Sem burocracia, sem prazo mínimo obrigatório.
             </p>
+          </div>
 
-            <div className="hero-buttons" style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: 12 }}>
-              <Link to="/contato" className="btn-primary">
+          <div className="hero-ctas">
+            <div className="hero-buttons" style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+              <Link to="/contato" className="btn-primary hero-btn-primary">
                 Solicitar Orçamento <ArrowRight size={17} />
               </Link>
-              <a href="#servicos" className="btn-ghost">
+              <a href="#servicos" className="btn-ghost hero-btn-ghost">
                 Ver Serviços <ArrowDown size={17} />
               </a>
             </div>
-          </div>
 
-          <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
-            {[
-              "Contratos do diário ao anual",
-              "Proposta em horas",
-              "Atendimento direto",
-            ].map((t) => (
-              <span
-                key={t}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                  fontSize: 13,
-                  color: "rgba(255,255,255,0.65)",
-                  fontFamily: "Nunito, sans-serif",
-                }}
-              >
-                <Check size={13} color="#FF0000" strokeWidth={3} />
-                {t}
-              </span>
-            ))}
+            <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
+              {[
+                "Contratos do diário ao anual",
+                "Proposta em horas",
+                "Atendimento direto",
+              ].map((t) => (
+                <span
+                  key={t}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.65)",
+                    fontFamily: "Nunito, sans-serif",
+                  }}
+                >
+                  <Check size={13} color="#FF0000" strokeWidth={3} />
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
