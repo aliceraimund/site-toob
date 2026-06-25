@@ -249,20 +249,10 @@
       justify-content: space-between;
       min-height: 100%;
       padding-top: 130px;
-      padding-bottom: 40px;
-    }
-    .hero-title {
-      font-size: clamp(30px, 8vw, 88px) !important;
-      margin-top: 10px !important;
-    }
-    .hero-desc {
-      display: none;
-    }
-    .hero-checklist {
-      display: none;
+      padding-bottom: 48px;
     }
     .hero-ctas {
-      margin-top: 0;
+      margin-top: 40px;
     }
   }
 }

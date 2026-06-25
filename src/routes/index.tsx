@@ -52,14 +52,13 @@ function HomePage() {
             </p>
 
             <h1
-              className="font-display hero-title"
+              className="font-display"
               style={{ fontSize: "clamp(48px, 7vw, 88px)", marginTop: 20, maxWidth: 900, color: "#fff" }}
             >
               Locação de Caminhões e Equipamentos.
             </h1>
 
             <p
-              className="hero-desc"
               style={{
                 marginTop: 24,
                 fontSize: 18,
@@ -79,12 +78,12 @@ function HomePage() {
               <Link to="/contato" className="btn-primary">
                 Solicitar Orçamento <ArrowRight size={17} />
               </Link>
-              <a href="#servicos" className="btn-ghost hero-ghost-btn">
+              <a href="#servicos" className="btn-ghost">
                 Ver Serviços <ArrowDown size={17} />
               </a>
             </div>
 
-            <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
+            <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
               {[
                 "Contratos do diário ao anual",
                 "Proposta em horas",
