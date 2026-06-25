@@ -21,67 +21,70 @@ function HomePage() {
         style={{
           minHeight: "100vh",
           display: "flex",
-          alignItems: "flex-end",
           color: "#fff",
           position: "relative",
         }}
       >
-        <div className="container-x" style={{ width: "100%", paddingBottom: 80, paddingTop: 180 }}>
-          {/* Logo recortada via clip para eliminar espaço em branco ao redor */}
-          <div style={{ marginBottom: 20, marginLeft: -8 }}>
-            <img
-              src="/logos/Logo Toob para Fundo Preto.png"
-              alt="Toob"
-              style={{ height: "clamp(56px, 9vw, 110px)", width: "auto", display: "block" }}
-            />
+        <div className="container-x hero-inner" style={{ width: "100%" }}>
+          <div className="hero-top">
+            {/* Logo recortada via clip para eliminar espaço em branco ao redor */}
+            <div className="hero-logo-wrap" style={{ marginBottom: 20, marginLeft: -8 }}>
+              <img
+                src="/logos/Logo Toob para Fundo Preto.png"
+                alt="Toob"
+                style={{ height: "clamp(56px, 9vw, 110px)", width: "auto", display: "block" }}
+              />
+            </div>
+
+            {/* item 2: destaque uppercase estilo eyebrow grande */}
+            <p
+              className="hero-eyebrow"
+              style={{
+                fontSize: "clamp(11px, 1.1vw, 14px)",
+                fontWeight: 800,
+                color: "rgba(255,255,255,0.75)",
+                fontFamily: "Nunito, sans-serif",
+                textTransform: "uppercase",
+                letterSpacing: "0.22em",
+                marginBottom: 16,
+              }}
+            >
+              Prazos flexíveis para a sua operação
+            </p>
+
+            <h1
+              className="font-display hero-title"
+              style={{ fontSize: "clamp(48px, 7vw, 88px)", marginTop: 20, maxWidth: 900, color: "#fff" }}
+            >
+              Locação de Caminhões e Equipamentos.
+            </h1>
+
+            <p
+              className="hero-desc"
+              style={{
+                marginTop: 24,
+                fontSize: 18,
+                lineHeight: 1.65,
+                color: "rgba(255,255,255,0.75)",
+                maxWidth: 540,
+                fontFamily: "Nunito, sans-serif",
+              }}
+            >
+              Diário, semanal, mensal ou anual. Você escolhe o prazo que faz sentido
+              para o seu negócio. Sem burocracia, sem prazo mínimo obrigatório.
+            </p>
+
+            <div className="hero-buttons" style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: 12 }}>
+              <Link to="/contato" className="btn-primary">
+                Solicitar Orçamento <ArrowRight size={17} />
+              </Link>
+              <a href="#servicos" className="btn-ghost">
+                Ver Serviços <ArrowDown size={17} />
+              </a>
+            </div>
           </div>
 
-          {/* item 2: destaque uppercase estilo eyebrow grande */}
-          <p
-            style={{
-              fontSize: "clamp(11px, 1.1vw, 14px)",
-              fontWeight: 800,
-              color: "rgba(255,255,255,0.75)",
-              fontFamily: "Nunito, sans-serif",
-              textTransform: "uppercase",
-              letterSpacing: "0.22em",
-              marginBottom: 16,
-            }}
-          >
-            Prazos flexíveis para a sua operação
-          </p>
-
-          <h1
-            className="font-display"
-            style={{ fontSize: "clamp(48px, 7vw, 88px)", marginTop: 20, maxWidth: 900, color: "#fff" }}
-          >
-            Locação de Caminhões e Equipamentos.
-          </h1>
-
-          <p
-            style={{
-              marginTop: 24,
-              fontSize: 18,
-              lineHeight: 1.65,
-              color: "rgba(255,255,255,0.75)",
-              maxWidth: 540,
-              fontFamily: "Nunito, sans-serif",
-            }}
-          >
-            Diário, semanal, mensal ou anual. Você escolhe o prazo que faz sentido
-            para o seu negócio. Sem burocracia, sem prazo mínimo obrigatório.
-          </p>
-
-          <div style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: 12 }}>
-            <Link to="/contato" className="btn-primary">
-              Solicitar Orçamento <ArrowRight size={17} />
-            </Link>
-            <a href="#servicos" className="btn-ghost">
-              Ver Serviços <ArrowDown size={17} />
-            </a>
-          </div>
-
-          <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
+          <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
             {[
               "Contratos do diário ao anual",
               "Proposta em horas",

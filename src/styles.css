@@ -229,6 +229,11 @@
       url('/hero-truck-v3.png');
     background-size: cover;
     background-position: center center;
+    align-items: flex-end;
+  }
+  .hero-inner {
+    padding-top: 180px;
+    padding-bottom: 80px;
   }
   @media (max-width: 768px) {
     .hero-home {
@@ -236,6 +241,37 @@
         linear-gradient(to top, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.05) 70%),
         url('/hero-truck-mobile.png');
       background-position: 80% center;
+      align-items: stretch;
+    }
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding-top: 130px;
+      padding-bottom: 28px;
+    }
+    .hero-logo-wrap {
+      margin-bottom: 10px !important;
+    }
+    .hero-eyebrow {
+      margin-bottom: 8px !important;
+    }
+    .hero-title {
+      font-size: clamp(36px, 9vw, 88px) !important;
+      margin-top: 8px !important;
+    }
+    .hero-desc {
+      margin-top: 12px !important;
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+    }
+    .hero-buttons {
+      margin-top: 22px !important;
+    }
+    .hero-checklist {
+      margin-top: 0 !important;
+      gap: 12px 20px !important;
     }
   }
 }
