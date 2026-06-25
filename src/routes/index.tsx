@@ -48,14 +48,14 @@ function HomePage() {
               marginBottom: 16,
             }}
           >
-            Locação de Caminhões e Equipamentos
+            Prazos flexíveis para a sua operação
           </p>
 
           <h1
             className="font-display"
             style={{ fontSize: "clamp(48px, 7vw, 88px)", marginTop: 20, maxWidth: 900, color: "#fff" }}
           >
-            Prazos flexíveis para a sua operação.
+            Locação de Caminhões e Equipamentos.
           </h1>
 
           <p
