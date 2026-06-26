@@ -223,6 +223,7 @@
   /* Hero home: imagem desktop é landscape; em telas estreitas usamos um
      recorte vertical dedicado (mesma cena, enquadrada para portrait). */
   .hero-home {
+    min-height: 100vh;
     background-image:
       linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.75) 30%, rgba(5,5,5,0.35) 60%, rgba(5,5,5,0.0) 85%),
       linear-gradient(to top, rgba(5,5,5,0.80) 0%, rgba(5,5,5,0.30) 35%, rgba(5,5,5,0.0) 60%),
@@ -234,6 +235,14 @@
   .hero-inner {
     padding-top: 180px;
     padding-bottom: 80px;
+  }
+  /* Em telas grandes, 100vh deixa muito vazio entre o menu e o texto
+     (o bloco é ancorado na base). Reduzimos a altura mínima para
+     aproximar o texto do topo sem depender do padding. */
+  @media (min-width: 1025px) and (orientation: landscape) {
+    .hero-home {
+      min-height: 88vh;
+    }
   }
   @media (max-width: 768px), (max-width: 1024px) and (orientation: portrait) {
     .hero-home {

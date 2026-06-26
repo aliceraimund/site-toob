@@ -19,7 +19,6 @@ function HomePage() {
       <section
         className="hero-home"
         style={{
-          minHeight: "100vh",
           display: "flex",
           color: "#fff",
           position: "relative",
@@ -75,7 +74,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="hero-buttons" style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+          <div className="hero-buttons" style={{ marginTop: 36, display: "flex", flexWrap: "wrap", gap: 12 }}>
             <Link to="/contato" className="btn-primary hero-btn-primary">
               Solicitar Orçamento <ArrowRight size={17} />
             </Link>
