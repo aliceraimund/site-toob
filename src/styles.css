@@ -235,7 +235,7 @@
     padding-top: 180px;
     padding-bottom: 80px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 768px), (max-width: 1024px) and (orientation: portrait) {
     .hero-home {
       background-image:
         linear-gradient(to top, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, rgba(5,5,5,0.05) 70%),
