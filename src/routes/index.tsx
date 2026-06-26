@@ -75,38 +75,36 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="hero-ctas">
-            <div className="hero-buttons" style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-              <Link to="/contato" className="btn-primary hero-btn-primary">
-                Solicitar Orçamento <ArrowRight size={17} />
-              </Link>
-              <a href="#servicos" className="btn-ghost hero-btn-ghost">
-                Ver Serviços <ArrowDown size={17} />
-              </a>
-            </div>
+          <div className="hero-buttons" style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+            <Link to="/contato" className="btn-primary hero-btn-primary">
+              Solicitar Orçamento <ArrowRight size={17} />
+            </Link>
+            <a href="#servicos" className="btn-ghost hero-btn-ghost">
+              Ver Serviços <ArrowDown size={17} />
+            </a>
+          </div>
 
-            <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
-              {[
-                "Contratos do diário ao anual",
-                "Proposta em horas",
-                "Atendimento direto",
-              ].map((t) => (
-                <span
-                  key={t}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 8,
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.65)",
-                    fontFamily: "Nunito, sans-serif",
-                  }}
-                >
-                  <Check size={13} color="#FF0000" strokeWidth={3} />
-                  {t}
-                </span>
-              ))}
-            </div>
+          <div className="hero-checklist" style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 20 }}>
+            {[
+              "Contratos do diário ao anual",
+              "Proposta em horas",
+              "Atendimento direto",
+            ].map((t) => (
+              <span
+                key={t}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.65)",
+                  fontFamily: "Nunito, sans-serif",
+                }}
+              >
+                <Check size={13} color="#FF0000" strokeWidth={3} />
+                {t}
+              </span>
+            ))}
           </div>
         </div>
       </section>
